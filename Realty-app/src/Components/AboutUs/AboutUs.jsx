@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutUs = () => {
-  result(
+  return (
     <>
       <div>Code here</div>
     </>
