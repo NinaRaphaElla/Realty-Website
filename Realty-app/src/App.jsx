@@ -2,6 +2,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Home from "./Components/Home/Home.jsx";
+import Properties from "./Components/Properties/Properties.jsx";
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
           </Route>
           <Route path="/about">
             <AboutUs />
+          </Route>
+          <Route path="/properties">
+            <Properties />
           </Route>
         </Switch>
       </Router>

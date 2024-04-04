@@ -7,7 +7,7 @@ import { RiMenu3Fill, RiCloseLine } from "react-icons/ri";
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Properties", link: "/" },
+    { name: "Properties", link: "/properties" },
     { name: "About Us", link: "/about" },
     { name: "FAQs", link: "/" },
     { name: "Contact Us", link: "/" },
