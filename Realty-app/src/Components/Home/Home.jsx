@@ -1,14 +1,14 @@
 import React from "react";
 
+import PropertyCard from "../PropertyCard/PropertyCard";
+import aboutImg1 from "./about-img1.png";
+import aboutImg2 from "./about-img2.png";
+import aboutImg3 from "./about-img3.png";
 import heroImg1 from "./hero_img1.png";
 import heroImg2 from "./hero_img2.png";
 import heroImg3 from "./hero_img3.png";
 import i7Logo from "./logo-intelliseven.png";
-import aboutImg1 from "./about-img1.png";
-import aboutImg2 from "./about-img2.png";
-import aboutImg3 from "./about-img3.png";
 import peopleSvg from "./people.svg";
-import PropertyCard from "../PropertyCard/PropertyCard";
 
 const Home = () => {
   return (

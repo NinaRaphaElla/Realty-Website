@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Home from "./Components/Home/Home.jsx";
-import AboutUs from "./Components/AboutUs/AboutUs.jsx";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
