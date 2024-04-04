@@ -21,6 +21,10 @@ export default {
         playFair: ["Playfair Display, serif"],
         noto: ["Noto Serif Display, serif"],
       },
+
+      boxShadow: {
+        xl: ["0 2px 15px rgba(0, 0, 0, 0.10)"],
+      },
     },
   },
   plugins: [],

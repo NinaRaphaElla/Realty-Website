@@ -14,55 +14,65 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="mr-16 ml-16 mt-20 flex justify-between">
-        <div>
-          <h1 className="m-0 p-0 font-normal text-4xl">Welcome to</h1>
-          <h1 className="m-0 p-0 text-[6.5rem] font-normal flex-nowrap font-noto">
+      <div className="mx-16 mt-24 md:flex">
+        <div className="mr-8">
+          <h1 className="whitespace-nowrap text-3xl mb-[-2rem]">Welcome to</h1>
+          <h1 className="text-[6rem] md:text-[4rem] lg:text-[6rem] xl:text-[7rem] font-normal font-noto">
             1568&#160;<span className="text-primary font-playFair">Realty</span>
           </h1>
         </div>
-        <img className="" src={heroImg1} alt="Hero Image" />
-      </div>
-
-      <div className="flex justify-between ml-16 mr-16 mt-4">
-        <div>
+        <div className="flex-1">
           <img
-            className="w-[600px] object-cover"
-            src={heroImg2}
+            className="object-cover h-full w-full"
+            src={heroImg1}
             alt="Hero Image"
           />
-          <div className="flex justify-between pl-6 pr-6 mt-4">
-            <p className="flex flex-col text-3xl m-0">
-              0K+<span className="text-base">Happy Customers</span>
+        </div>
+      </div>
+
+      {/* Layer 2 */}
+      <div className="md:flex mx-16 mt-4">
+        <div className="mr-4">
+          <div className="flex-1">
+            <img
+              className="object-cover h-full w-full"
+              src={heroImg2}
+              alt="Hero Image"
+            />
+          </div>
+          <div className="flex justify-between mx-10 mt-4">
+            <p className="flex flex-col text-3xl text-secondary-200">
+              0K+<span className="text-base text-black">Happy Customers</span>
             </p>
-            <p className="flex flex-col text-3xl m-0">
-              000+<span className="text-base">Daily Inquiries</span>
+            <p className="flex flex-col text-3xl text-secondary-200">
+              000+<span className="text-base text-black">Daily Inquiries</span>
             </p>
-            <p className="flex flex-col text-3xl m-0">
-              000+<span className="text-base">Listed Properties</span>
+            <p className="flex flex-col text-3xl text-secondary-200">
+              000+
+              <span className="text-base text-black">Listed Properties</span>
             </p>
           </div>
         </div>
 
         <div>
           <div>
-            <h1 className="m-0 p-0 text-4xl font-normal">Unlock your</h1>
-            <h1 className="m-0 p-0 text-8xl font-normal text-primary">
-              dream home
-            </h1>
-            <h1 className="m-0 p-0 text-4xl font-normal">with us</h1>
+            <h1 className="text-3xl">Unlock your</h1>
+            <h1 className="text-7xl text-primary">dream home</h1>
+            <h1 className="text-4xl">with us</h1>
           </div>
-          <img
-            className="w-[510px] h-[130px] mt-4 object-cover"
-            src={heroImg3}
-            alt="Hero Image"
-          />
+          <div className="flex-1 mt-4">
+            <img
+              className="object-cover h-full w-full"
+              src={heroImg3}
+              alt="Hero Image"
+            />
+          </div>
         </div>
       </div>
 
       {/* Powered by Intelliseven */}
-      <div className="bg-secondary-300 h-40 mb-20 mt-20 max-w-full flex flex-col justify-center items-center">
-        <p className="text-white text-base font-noto">powered by</p>
+      <div className="bg-secondary-300 h-40 my-20 max-w-full flex flex-col justify-center items-center">
+        <p className="text-white text-base font-playFair">powered by</p>
         <img
           className="h-24 mt-[-0.9rem]"
           alt="IntelliSeven Logo"
@@ -71,12 +81,12 @@ const Home = () => {
       </div>
 
       {/* About us Section */}
-      <div className="mb-20">
+      <div>
         <div className="flex justify-center">
-          <h1 className="text-5xl font-normal">Experience&nbsp;</h1>
+          <h1 className="text-5xl font-medium">Experience&nbsp;</h1>
           <div>
-            <h1 className="text-5xl font-normal text-primary">Excellence</h1>
-            <h1 className="text-5xl font-normal">
+            <h1 className="text-5xl font-medium text-primary">Excellence</h1>
+            <h1 className="text-5xl font-medium">
               in Real&nbsp;<span className="text-primary">Estate</span>
             </h1>
             <p className="text-base">Learn more about us</p>
@@ -85,26 +95,29 @@ const Home = () => {
 
         {/* Shape */}
         <div className="flex justify-center my-6">
-          <div className="bg-primary w-0.5 h-52"></div>
+          <div className="bg-primary w-0.5 h-60"></div>
         </div>
 
         {/* About-layer-1 */}
         <div className="flex mx-16 items-center">
           <img
-            className="max-w-full mr-8 mb-10"
+            className="flex-1 object-cover h-full w-full mr-8"
             alt="Property Image"
             src={aboutImg1}
           />
+
           {/* about-description */}
           <div>
-            <h1 className="text-secondary-300 mb-4">About 1568 Realty</h1>
-            <p className="mb-4 text-black">
+            <h1 className="text-secondary-300 text-3xl font-medium mb-5">
+              About <span className="font-noto">1568</span> Realty
+            </h1>
+            <p className="mb-5 text-black">
               We are your trusted partner in finding your dream home. With a
               team of experienced professionals that are dedicated in providing
               excellent service, we pride ourselves on our deep understanding of
               the market and our commitment to our client satisfaction.{" "}
             </p>
-            <p className="mb-10 text-black text-base">
+            <p className="mb-5 text-black text-base">
               With years of experience, we have provided a reputation for
               excellence, integrity, and reliability. Our clients trust us to
               guide them through every step of the buying, selling, or renting
