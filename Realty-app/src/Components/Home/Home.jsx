@@ -9,6 +9,8 @@ import heroImg2 from "./hero_img2.png";
 import heroImg3 from "./hero_img3.png";
 import i7Logo from "./logo-intelliseven.png";
 import peopleSvg from "./people.svg";
+import CTAButton from "../Buttons/CTAButton";
+import LoadButton from "../Buttons/LoadButton";
 
 const Home = () => {
   return (
@@ -99,13 +101,12 @@ const Home = () => {
         </div>
 
         {/* About-layer-1 */}
-        <div className="flex mx-16 items-center">
+        <div className="flex mx-16 items-center mb-10">
           <img
             className="flex-1 object-cover h-full w-full mr-8"
             alt="Property Image"
             src={aboutImg1}
           />
-
           {/* about-description */}
           <div>
             <h1 className="text-secondary-300 text-3xl font-medium mb-5">
@@ -128,12 +129,12 @@ const Home = () => {
         </div>
 
         {/* about-layer-2 */}
-        <div className="flex mx-16">
+        <div className="flex mx-16 mb-24">
           {/* about-us-layer2-section2*/}
           <div className="flex flex-col mr-6">
             <div className="mb-8">
               <h1 className="flex items-center mb-2 text-3xl text-primary">
-                <img className="h-8 mr-4" src={peopleSvg} />
+                <img className="size-[32px] mr-4" src={peopleSvg} />
                 Personalized Service
               </h1>
               <p className="text-base">
@@ -155,7 +156,7 @@ const Home = () => {
               </p>
             </div>
             <img
-              className="max-w-full h-[230px]"
+              className="flex-1 object-cover h-full w-full"
               alt="Property Image"
               src={aboutImg3}
             />
@@ -164,14 +165,13 @@ const Home = () => {
           {/* about-us-layer2-section2*/}
           <div className="flex flex-col">
             <img
-              className="max-w-full mb-8"
+              className="flex-1 object-cover h-full w-full mb-8"
               alt="Property Image"
               src={aboutImg2}
             />
-
             <div className="mb-8">
               <h1 className="flex items-center mb-2 text-3xl text-primary">
-                <img className="h-8 mr-4" src={peopleSvg} />
+                <img className="size-[32px] mr-4" src={peopleSvg} />
                 Secure Payment
               </h1>
               <p className="text-base">
@@ -184,7 +184,7 @@ const Home = () => {
             <div>
               <h1 className="flex items-center mb-2 text-3xl text-primary">
                 <img className="h-8 mr-4" src={peopleSvg} />
-                Hassle-free Transactions
+                Extensive Network
               </h1>
               <p className="text-base">
                 With an extensive network of industry connections and resources,
@@ -197,47 +197,66 @@ const Home = () => {
       </div>
 
       {/* Featured Properties */}
-      <div className="bg-secondary-300 px-16 py-8">
+      <div className="bg-secondary-300 py-6 mb-10">
         <div className="flex flex-col">
           {/* Featured Intro */}
-          <div>
-            <h1>Featured Properties</h1>
-            <p>Find your perfect property</p>
+          <div className="flex items-center">
+            <div className="bg-primary w-[35%] h-0.5 mr-8"></div>
+            <div>
+              <h1 className="text-4xl w-[65%] whitespace-nowrap font-medium text-white ">
+                Featured Properties
+              </h1>
+              <p className="text-white">Find your perfect property</p>
+            </div>
           </div>
 
-          <div className="flex justify-between max-w-full">
-            {/* Featured Properties */}
-            <PropertyCard
-              title="House and Lot For Sale in Taguig City"
-              description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-              price={45000000}
-              bedQuantity={2}
-              bathQuantity={2}
-              yearBuilt={2024}
-              landArea={1024}
-            />
+          <div className="flex justify-center space-x-10 my-8">
+            <div className="hover:-translate-y-2 transition duration-300 ease-in-out flex">
+              <PropertyCard
+                title="House and Lot For Sale in Taguig City"
+                description="Impressive House and Lot with Roof Deck and Swimming Pool…"
+                price={45000000}
+                bedQuantity={2}
+                bathQuantity={2}
+                yearBuilt={2024}
+                landArea={1024}
+              />
+            </div>
 
-            <PropertyCard
-              title="Pandi House Rental"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..."
-              price={30000}
-              bedQuantity={1}
-              bathQuantity={1}
-              yearBuilt={2021}
-              landArea={500}
-            />
+            <div className="hover:-translate-y-2 transition duration-300 ease-in-out">
+              <PropertyCard
+                title="House and Lot For Sale in Taguig City"
+                description="Impressive House and Lot with Roof Deck and Swimming Pool…"
+                price={45000000}
+                bedQuantity={2}
+                bathQuantity={2}
+                yearBuilt={2024}
+                landArea={1024}
+              />
+            </div>
 
-            <PropertyCard
-              title="Calumpit Property 1"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor..."
-              price={30000}
-              bedQuantity={1}
-              bathQuantity={1}
-              yearBuilt={2021}
-              landArea={500}
-            />
+            <div className="hover:-translate-y-2 transition duration-300 ease-in-out-">
+              <PropertyCard
+                title="House and Lot For Sale in Taguig City"
+                description="Impressive House and Lot with Roof Deck and Swimming Pool…"
+                price={45000000}
+                bedQuantity={2}
+                bathQuantity={2}
+                yearBuilt={2024}
+                landArea={1024}
+              />
+            </div>
           </div>
+          <CTAButton />
         </div>
+      </div>
+
+      {/* FAQS */}
+      <div className="flex justify-end items-center">
+        <h1 className="text-4xl whitespace-nowrap font-medium text-black mr-8 flex flex-1 justify-end">
+          Frequently Asked&nbsp;<span className="text-primary"> Questions</span>
+        </h1>
+        <div className="bg-primary w-[30%] h-0.5"></div>
       </div>
     </>
   );

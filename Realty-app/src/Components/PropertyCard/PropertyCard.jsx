@@ -29,20 +29,20 @@ const PropertyCard = (props) => {
             {/* property overview div */}
             <div className="flex justify-between font-sans text-xs mb-6 font-medium text-center text-gray">
               <div>
-                <p className="m-0 ">Bedrooms</p>
-                <p className="m-0">{props.bedQuantity}</p>
+                <p>Bedrooms</p>
+                <p>{props.bedQuantity}</p>
               </div>
               <div>
-                <p className="m-0">Bathrooms</p>
-                <p className="m-0">{props.bathQuantity}</p>
+                <p>Bathrooms</p>
+                <p>{props.bathQuantity}</p>
               </div>
               <div>
-                <p className="m-0">Year Built</p>
-                <p className="m-0">{props.yearBuilt}</p>
+                <p>Year Built</p>
+                <p>{props.yearBuilt}</p>
               </div>
               <div>
-                <p className="m-0">Land Area</p>
-                <p className="m-0">{props.landArea} sqft</p>
+                <p>Land Area</p>
+                <p>{props.landArea} sqft</p>
               </div>
             </div>
           </div>
