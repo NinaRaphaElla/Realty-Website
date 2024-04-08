@@ -1,4 +1,5 @@
 import React from "react";
+import { MdChevronLeft } from "react-icons/md";
 
 import PropertyCard from "../PropertyCard/PropertyCard";
 import Footer from "../Footer/Footer.jsx";
@@ -263,15 +264,20 @@ const Home = () => {
       </div>
 
       {/* FAQS */}
-      <div className="flex justify-end items-center">
-        <h1 className="text-4xl whitespace-nowrap font-medium text-black mr-8 flex flex-1 justify-end">
-          Frequently Asked&nbsp;<span className="text-primary"> Questions</span>
-        </h1>
-        <div className="bg-primary w-[30%] h-0.5"></div>
+      <div className="mb-32">
+        <div className="flex justify-end items-center mb-4">
+          <h1 className="text-4xl whitespace-nowrap font-medium text-black mr-8 flex flex-1 justify-end">
+            Frequently Asked&nbsp;
+            <span className="text-primary"> Questions</span>
+          </h1>
+          <div className="bg-primary w-[30%] h-0.5"></div>
+        </div>
       </div>
 
       {/* Contact Us */}
-      <ContactUs />
+      <div className="mb-24">
+        <ContactUs />
+      </div>
 
       {/* Outro */}
 

@@ -10,11 +10,16 @@ export default {
           200: "#089860",
           300: "#01311F",
         },
+
         accent: "#C6AA58",
+        hover: {
+          accent: "#A48937",
+        },
 
         black: "#1C1C1C",
         white: "#F9F9F9",
         gray: "#7F7F7F",
+        input: "#EDEFF4",
       },
 
       fontFamily: {

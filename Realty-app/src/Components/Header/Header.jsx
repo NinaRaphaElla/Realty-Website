@@ -9,7 +9,8 @@ const Header = () => {
     { name: "Properties", link: "/properties" },
     { name: "About Us", link: "/about" },
     { name: "FAQs", link: "/faqs" },
-    { name: "Contact Us", link: "/" },
+    { name: "Contact Us", link: "/contact" },
+    { name: "Property Details", link: "/details" },
   ];
 
   const [menuState, setMenuState] = useState(false);

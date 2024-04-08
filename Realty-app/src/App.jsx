@@ -4,6 +4,7 @@ import Faqs from "./Components/Faqs/Faqs.jsx";
 import Header from "./Components/Header/Header.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Properties from "./Components/Properties/Properties.jsx";
+import PropertyDetails from "./Components/PropertyDetails/PropertyDetails.jsx";
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
           </Route>
           <Route exact path="/faqs">
             <Faqs />
+          </Route>
+          <Route exact path="/details">
+            <PropertyDetails />
           </Route>
         </Switch>
       </Router>
