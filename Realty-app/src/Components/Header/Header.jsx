@@ -1,15 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import mainLogo from "./Logo.png";
 // import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { RiMenu3Fill, RiCloseLine } from "react-icons/ri";
+import { RiCloseLine, RiMenu3Fill } from "react-icons/ri";
 
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
     { name: "Properties", link: "/properties" },
     { name: "About Us", link: "/about" },
-    { name: "FAQs", link: "/" },
+    { name: "FAQs", link: "/faqs" },
     { name: "Contact Us", link: "/" },
   ];
 
