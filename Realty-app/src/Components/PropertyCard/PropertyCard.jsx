@@ -1,5 +1,6 @@
 import propertyImage from "./property-img.png";
 import propTypes from "prop-types";
+import TextButton from "../Buttons/TextButton";
 
 const PropertyCard = (props) => {
   return (
@@ -45,6 +46,7 @@ const PropertyCard = (props) => {
                 <p>{props.landArea} sqft</p>
               </div>
             </div>
+            <TextButton btnName={"View more"} className="bg-red-100" />
           </div>
         </div>
       </div>

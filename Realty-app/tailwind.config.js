@@ -20,6 +20,7 @@ export default {
       fontFamily: {
         playFair: ["Playfair Display, serif"],
         noto: ["Noto Serif Display, serif"],
+        helvetica: ["Helvetica"],
       },
 
       boxShadow: {
