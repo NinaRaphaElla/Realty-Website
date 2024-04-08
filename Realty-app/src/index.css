@@ -10,13 +10,13 @@
 }
 
 body {
-  height: 5000px;
 }
 
 p {
   font-family: "Helvetica";
 }
 
-h1 {
+h1,
+h3 {
   font-family: "Playfair Display", serif;
 }

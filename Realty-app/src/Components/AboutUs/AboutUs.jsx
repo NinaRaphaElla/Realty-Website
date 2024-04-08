@@ -14,7 +14,10 @@ const AboutUs = () => {
       {/* About Background Details */}
       <div className="flex flex-wrap mx-16 mt-24 relative">
         <img className="flex" src={image} />
-        <h1 className="absolute top-48 left-1/2 justify-center text-5xl font-medium font-playFair text-white transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <h1
+          id="top"
+          className="absolute top-48 left-1/2 justify-center text-5xl font-medium font-playFair text-white transform -translate-x-1/2 -translate-y-1/2 text-center"
+        >
           About Us
         </h1>
       </div>

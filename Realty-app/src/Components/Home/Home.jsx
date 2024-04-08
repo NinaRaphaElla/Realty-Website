@@ -1,6 +1,10 @@
 import React from "react";
 
 import PropertyCard from "../PropertyCard/PropertyCard";
+import Footer from "../Footer/Footer.jsx";
+import ContactUs from "../ContactUs/ContactUs.jsx";
+import { Link } from "react-router-dom";
+
 import aboutImg1 from "./about-img1.png";
 import aboutImg2 from "./about-img2.png";
 import aboutImg3 from "./about-img3.png";
@@ -9,8 +13,11 @@ import heroImg2 from "./hero_img2.png";
 import heroImg3 from "./hero_img3.png";
 import i7Logo from "./logo-intelliseven.png";
 import peopleSvg from "./people.svg";
+import outro from "./outro.png";
+
 import CTAButton from "../Buttons/CTAButton";
 import LoadButton from "../Buttons/LoadButton";
+import TextButton from "../Buttons/TextButton";
 
 const Home = () => {
   return (
@@ -19,9 +26,9 @@ const Home = () => {
       <div className="mx-16 mt-24 md:flex">
         <div className="mr-8">
           <h1 className="whitespace-nowrap text-3xl mb-[-2rem]">Welcome to</h1>
-          <h1 className="text-[6rem] md:text-[4rem] lg:text-[6rem] xl:text-[7rem] font-normal font-noto">
+          {/* <h1 className="text-[4rem] md:text-[4rem] lg:text-[6rem] xl:text-[7rem] font-normal font-noto">
             1568&#160;<span className="text-primary font-playFair">Realty</span>
-          </h1>
+          </h1> */}
         </div>
         <div className="flex-1">
           <img
@@ -84,7 +91,7 @@ const Home = () => {
 
       {/* About us Section */}
       <div>
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <h1 className="text-5xl font-medium">Experience&nbsp;</h1>
           <div>
             <h1 className="text-5xl font-medium text-primary">Excellence</h1>
@@ -93,7 +100,7 @@ const Home = () => {
             </h1>
             <p className="text-base">Learn more about us</p>
           </div>
-        </div>
+        </div> */}
 
         {/* Shape */}
         <div className="flex justify-center my-6">
@@ -108,7 +115,7 @@ const Home = () => {
             src={aboutImg1}
           />
           {/* about-description */}
-          <div>
+          {/* <div>
             <h1 className="text-secondary-300 text-3xl font-medium mb-5">
               About <span className="font-noto">1568</span> Realty
             </h1>
@@ -125,7 +132,8 @@ const Home = () => {
               process, ensuring a smooth and stress-free experience from start
               to finish.
             </p>
-          </div>
+            <CTAButton btnName={"Learn more"} />
+          </div> */}
         </div>
 
         {/* about-layer-2 */}
@@ -163,7 +171,7 @@ const Home = () => {
           </div>
 
           {/* about-us-layer2-section2*/}
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             <img
               className="flex-1 object-cover h-full w-full mb-8"
               alt="Property Image"
@@ -192,7 +200,7 @@ const Home = () => {
                 exclusive listings that may not be available to the public.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -210,7 +218,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex justify-center space-x-10 my-8">
+          <div className="flex flex-wrap justify-center space-x-10 my-8">
             <div className="hover:-translate-y-2 transition duration-300 ease-in-out flex">
               <PropertyCard
                 title="House and Lot For Sale in Taguig City"
@@ -247,7 +255,10 @@ const Home = () => {
               />
             </div>
           </div>
-          <CTAButton />
+
+          <div className="flex justify-center">
+            <CTAButton btnName={"View all listings"} />
+          </div>
         </div>
       </div>
 
@@ -258,6 +269,30 @@ const Home = () => {
         </h1>
         <div className="bg-primary w-[30%] h-0.5"></div>
       </div>
+
+      {/* Contact Us */}
+      <ContactUs />
+
+      {/* Outro */}
+
+      <div className="flex flex-wrap mx-4 md:mx-16">
+        <img className="object-cover md:w-[50%]" src={outro} />
+        <div className="bg-secondary-300 md:w-[50%] max-h-full flex flex-col justify-center px-12 py-12 md:py-8">
+          <h1 className="text-2xl md:text-xl lg:text-2xl xl:text-3xl text-white mb-4">
+            Unlock your dream home and live an exceptional life with 1568 Realty
+          </h1>
+          <p className="text-base md:text-sm lg:text-base xl:text-base text-white mb-4">
+            Because we offer the finest selection of houses and lots for sale.
+          </p>
+          <div className="flex flex-col space-y-2 sm:space-y-2 lg:flex-row lg:justify-start lg:space-x-4 lg:space-y-0 whitespace-nowrap justify-between xl:justify-start xl:space-x-4">
+            <Link to="/about#top">
+              <CTAButton btnName={"About us"} />
+            </Link>
+            <CTAButton btnName={"View listings"} />
+          </div>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };
