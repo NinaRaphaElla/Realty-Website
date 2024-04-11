@@ -32,7 +32,7 @@ const Footer = () => {
               get the latest listings and updates!
             </h1>
             <input
-              className="border w-full py-2 px-2 font-helvetica mb-2"
+              className="w-full py-3 px-3 font-helvetica mb-2 bg-input text-black focus:outline-none"
               type="text"
               placeholder="Enter Email Address"
             />

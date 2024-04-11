@@ -14,6 +14,7 @@ export default {
         accent: "#C6AA58",
         hover: {
           accent: "#A48937",
+          faqs: "#CCD5D2",
         },
 
         black: "#1C1C1C",
