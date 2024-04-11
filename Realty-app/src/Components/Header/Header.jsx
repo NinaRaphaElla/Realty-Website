@@ -11,7 +11,7 @@ const Header = () => {
     { name: "About Us", link: "/about" },
     { name: "FAQs", link: "/faqs" },
     { name: "Contact Us", link: "/contact" },
-    // { name: "Property Details", link: "/details" },
+    { name: "Property Details", link: "/details" },
   ];
 
   const [menuState, setMenuState] = useState(false);

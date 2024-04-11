@@ -1,6 +1,7 @@
 import propTypes from "prop-types";
 import TextButton from "../Buttons/TextButton";
 import propertyImage from "./property-img.png";
+import propertyList from "/src/propertyList.json";
 
 const PropertyCard = (props) => {
   return (
