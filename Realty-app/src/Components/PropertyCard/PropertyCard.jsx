@@ -1,11 +1,11 @@
-import propertyImage from "./property-img.png";
 import propTypes from "prop-types";
 import TextButton from "../Buttons/TextButton";
+import propertyImage from "./property-img.png";
 
 const PropertyCard = (props) => {
   return (
     <>
-      <div>
+      <div className="hover:-translate-y-2 transition duration-300 ease-in-out">
         <div className="bg-white flex flex-col max-w-80 h-[460px]">
           <div className="relative">
             <img
