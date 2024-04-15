@@ -74,6 +74,9 @@ const Header = () => {
               Contact Us
             </a>
           </li>
+          <li className="md:ml-8 text-sm cursor-pointer px-16 md:px-0 hover:text-accent">
+            <a href="/details">Property Details</a>
+          </li>
         </ul>
       </header>
 
