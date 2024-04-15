@@ -1,0 +1,46 @@
+{
+  "property_status": ["Any Status", "For Sale", "For Rent", "Sold"],
+
+  "property_types": [
+    "All types",
+    "Apartment",
+    "House",
+    "Condo",
+    "Townhouse",
+    "Land"
+  ],
+
+  "price_range": [
+    "₱150K - ₱300K",
+    "₱350K - ₱600K",
+    "₱500K - ₱900K",
+    "₱700K - ₱1.2M",
+    "₱900K - ₱1.6M",
+    "₱1M - ₱1.8M",
+    "₱1.2M - ₱2.2M",
+    "₱3M and Above"
+  ],
+
+  "location": [
+    "Metro Manila",
+    "Cebu City",
+    "Davao City",
+    "Quezon City",
+    "Manila",
+    "Makati City",
+    "Taguig City",
+    "Cebu",
+    "Pasig City",
+    "Parañaque City",
+    "Mandaluyong City",
+    "Angeles City",
+    "Baguio City",
+    "Antipolo City",
+    "Bacolod City",
+    "Cagayan de Oro City",
+    "Iloilo City",
+    "Calamba City",
+    "Bacoor City",
+    "Dasmarinas City"
+  ]
+}
