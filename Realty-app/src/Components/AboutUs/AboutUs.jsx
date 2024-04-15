@@ -203,43 +203,10 @@ const AboutUs = () => {
 
       <p className="text-white text-center">Find your perfect property</p>
 
-      <div className="flex flex-wrap justify-center space-y-8 md:space-y-0 md:space-x-4 lg:space-x-4 my-8">
-        <div className="hover:-translate-y-2 transition duration-300 ease-in-out flex">
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        </div>
-
-        <div className="hover:-translate-y-2 transition duration-300 ease-in-out">
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        </div>
-
-        <div className="hover:-translate-y-2 transition duration-300 ease-in-out-">
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        </div>
+      <div className="flex flex-wrap gap-20 justify-center items-center">
+        <PropertyCard />
       </div>
+
       {/* View all listings button */}
       <div className="flex justify-center">
         <CTAButton btnName={"View all listings"} />

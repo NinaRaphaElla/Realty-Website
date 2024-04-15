@@ -1,448 +1,198 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import LoadButton from "../Buttons/LoadButton.jsx";
-import Header from "../Header/Header.jsx";
 import PropertyCard from "../PropertyCard/PropertyCard.jsx";
 import photo from "./PropertiesImage.png";
+import { RiArrowDownSLine } from "react-icons/ri";
+import propertyFilter from "./propertyFilter.json";
 
 const Properties = () => {
+  const [isOpenStatus, setIsOpenStatus] = useState(false);
+  const [selectedStatus, setSelectedStatus] = useState("Select Status");
+
+  const [isOpentypes, setIsOpenTypes] = useState(false);
+  const [selectedTypes, setSelectedTypes] = useState("Select Type");
+
+  const [isOpenLocation, setIsOpenLocation] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState("Select Location");
+
+  const [isOpenPrice, setIsOpenPrice] = useState(false);
+  const [selectedPrice, setSelectedPrice] = useState("Select Price");
+
+  const handleStatusSelect = (status) => {
+    setSelectedStatus(status);
+    setIsOpenStatus(false);
+  };
+
+  const handleTypesSelect = (types) => {
+    setSelectedTypes(types);
+    setIsOpenTypes(false);
+  };
+
+  const handleLocationSelect = (location) => {
+    setSelectedLocation(location);
+    setIsOpenLocation(false);
+  };
+
+  const handlePriceSelect = (price) => {
+    setSelectedPrice(price);
+    setIsOpenPrice(false);
+  };
+
   return (
     <>
-      <Header />
-
       {/* About Background Details */}
-      <div className="mx-4 mt-24 md:mx-16 space-y-10">
+      <div className="mx-4 mt-20 md:mx-16 space-y-10">
         <div className="relative">
           <img className="w-full" src={photo} />
           <div className="absolute inset-0 flex justify-center items-center">
-            <h1 className="text-white font-medium text-4xl">Properties</h1>
+            <h1 className="text-white font-medium text-3xl md:text-4xl">
+              List of Properties
+            </h1>
+          </div>
 
-            {/* Rectangle background in Dropdown */}
-            <div className="mx-32 absolute justify-center items-center bg-white w-4/5 h-28 top-80 shadow-lg"></div>
-
+          <div
+            className="absolute bg-white shadow-md p-5 md:space-x-5 flex flex-col md:flex-row justify-center
+          items-center left-0 right-0 mx-8 md:bottom-[-120px] mb-24"
+          >
             {/* Dropdown - Property Status */}
-            <div className="md:flex flex-wrap mt-96 md:space-x-8 absolute justify-center items-center">
-              <div>
-                <p>Property Status</p>
-                <select className="px-2 mt-2 items-center w-48 h-10 bg-white text-gray-700 border-2 border-gray hover:border-gray-400 focus:border-gray-400">
-                  <option type="" disabled selected hidden>
-                    Featured
-                  </option>
+            <div className="w-full md:w-[20%] space-y-1">
+              <label className="text-sm">Property Status</label>
+              <button
+                onClick={() => setIsOpenStatus((prev) => !prev)}
+                className="bg-white border-[0.1rem] p-2 w-full flex items-center justify-between"
+              >
+                {selectedStatus}
+                {isOpenStatus ? (
+                  <RiArrowDownSLine className="size-5 rotate-180 transition-all ease-in-out duration-300" />
+                ) : (
+                  <RiArrowDownSLine className="size-5 transition-all ease-in-out duration-300" />
+                )}
+              </button>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    All status
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    For Sale
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    For Rent
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Sold
-                  </option>
-                </select>
-              </div>
-
+              {isOpenStatus && (
+                <div className="absolute bg-white p-2 z-10 w-[89%] md:w-[19%] shadow-md">
+                  {propertyFilter.property_status.map((status, index) => (
+                    <div
+                      className="hover:bg-hover-faqs hover:border-l-secondary-100 hover:border-l-2 p-2 cursor-pointer"
+                      onClick={() => handleStatusSelect(status)}
+                    >
+                      <p>{status}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Property Types */}
-              <div>
-                <p>Property Types</p>
-                <select className="px-2 mt-2 items-center w-48 h-10 bg-white text-gray-700 border-2 border-gray hover:border-gray-400 focus:border-gray-400">
-                  <option type="" disabled selected hidden>
-                    All types
-                  </option>
+            <div className="w-full md:w-[20%] space-y-1">
+              <label className="text-sm">Property Types</label>
+              <button
+                onClick={() => setIsOpenTypes((prev) => !prev)}
+                className="bg-white border-[0.1rem] p-2 w-full flex items-center justify-between"
+              >
+                {selectedTypes}
+                {isOpentypes ? (
+                  <RiArrowDownSLine className="size-5 rotate-180 transition-all ease-in-out duration-300" />
+                ) : (
+                  <RiArrowDownSLine className="size-5 transition-all ease-in-out duration-300" />
+                )}
+              </button>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    Commercial
-                  </option>
+              {isOpentypes && (
+                <div className="absolute bg-white p-2 z-10 w-[89%] md:w-[19%] shadow-md">
+                  {propertyFilter.property_types.map((types, index) => (
+                    <div
+                      className="hover:bg-hover-faqs hover:border-l-secondary-100 hover:border-l-2 p-2 cursor-pointer"
+                      onClick={() => handleTypesSelect(types)}
+                    >
+                      <p>{types}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    Farm Lot
-                  </option>
+            {/* Property Location */}
+            <div className="w-full md:w-[20%] space-y-1">
+              <label className="text-sm">Location</label>
+              <button
+                onClick={() => setIsOpenLocation((prev) => !prev)}
+                className="bg-white border-[0.1rem] p-2 w-full flex items-center justify-between"
+              >
+                {selectedLocation}
+                {isOpenLocation ? (
+                  <RiArrowDownSLine className="size-5 rotate-180 transition-all ease-in-out duration-300" />
+                ) : (
+                  <RiArrowDownSLine className="size-5 transition-all ease-in-out duration-300" />
+                )}
+              </button>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    House and Lot
-                  </option>
+              {isOpenLocation && (
+                <div className="absolute bg-white p-2 z-10 w-[89%] md:w-[19%] shadow-md max-h-[216px] overflow-y-auto">
+                  {propertyFilter.location.map((location, index) => (
+                    <div
+                      className="hover:bg-hover-faqs hover:border-l-secondary-100 hover:border-l-2 p-2 cursor-pointer"
+                      onClick={() => handleLocationSelect(location)}
+                    >
+                      <p>{location}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    Residential Lot
-                  </option>
+            {/* Property Price Range */}
+            <div className="w-full md:w-[20%] space-y-1">
+              <label className="text-sm">Price range</label>
+              <button
+                onClick={() => setIsOpenPrice((prev) => !prev)}
+                className="bg-white border-[0.1rem] p-2 w-full flex items-center justify-between"
+              >
+                {selectedPrice}
+                {isOpenPrice ? (
+                  <RiArrowDownSLine className="size-5 rotate-180 transition-all ease-in-out duration-300" />
+                ) : (
+                  <RiArrowDownSLine className="size-5 transition-all ease-in-out duration-300" />
+                )}
+              </button>
 
-                  <option className="hover:bg-gray hover:text-white">
-                    Condo
-                  </option>
-                </select>
-              </div>
+              {isOpenPrice && (
+                <div className="absolute bg-white p-2 z-10 w-[89%] md:w-[19%] shadow-md max-h-[216px] overflow-y-auto">
+                  {propertyFilter.price_range.map((price, index) => (
+                    <div
+                      className="hover:bg-hover-faqs hover:border-l-secondary-100 hover:border-l-2 p-2 cursor-pointer"
+                      onClick={() => handlePriceSelect(price)}
+                    >
+                      <p>{price}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
 
-
-            {/* Price Range */}
-              <div>
-                <p>Price Range</p>
-                <select className="px-2 mt-2 items-center w-48 h-10 bg-white text-gray-700 border-2 border-gray hover:border-gray-400 focus:border-gray-400">
-                  <option type="" disabled selected hidden>
-                    Any price
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱150K - ₱300K
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱350K - ₱600K
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱500K - ₱900K
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱700K - ₱1.2M
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱900K - ₱1.6M
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱1M - ₱1.8M
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱1.2M - ₱2.2M
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    ₱3M and Above
-                  </option>
-                </select>
-              </div>
-
-
-            {/* Location */}
-              <div>
-                <p>Locations</p>
-                <select className="px-2 mt-2 items-center w-48 h-10 bg-white text-gray-700 border-2 border-gray hover:border-gray-400 focus:border-gray-400">
-                  <option type="" disabled selected hidden>
-                    Select location
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Abra
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Aklan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Albay
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Bataan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Batangas
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Bulacan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Cagayan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Camarines Sur
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Cavite
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Davao del Norte
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Davao del Sur
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Davao Occidental
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Eastern Samar
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Guimaras
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Iloilo
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Ilocos Norte
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Ilocos Sur
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Kalinga
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    La Union
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Laguna
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Leyte
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Maguindanao
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Marinduque
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Masbate
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Negros Occidental
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Negros Oriental
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Nueva Ecija
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Occidental Mindoro
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Oriental Mindoro
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Palawan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Pampanga
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Pangasinan
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Quezon
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Quirino
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Rizal
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Romblon
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Samar
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Tarlac
-                  </option>
-
-                  <option className="hover:bg-gray hover:text-white">
-                    Zambales
-                  </option>
-                </select>
-              </div>
-
-              {/* Search Button */}
-              <div>
-                <button className="flex px-2 mt-8 items-center w-28 h-10 bg-accent text-white border-2 border-accent">
-                  <AiOutlineSearch className="mr-2 m-1 size-6" />
-                  <p>Search</p>
-                </button>
-              </div>
+            {/* Search Button */}
+            <div className="w-full md:w-[20%] space-y-1">
+              <label className="text-white">Search</label>
+              <button className="flex items-center justify-center bg-accent text-white border-2 border-accent px-3 py-2 mt-4 w-full">
+                <AiOutlineSearch className="mr-2 size-5" />
+                <p>Search</p>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Cards */}
-      <div className="flex flex-wrap mt-40 gap-20 justify-center items-center">
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-       
-
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-      
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        
-
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-       
-
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-      
-
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-       
-
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-       
-
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        
-  
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        
-
-        
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        
-
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
-        
-
-          <PropertyCard
-            title="House and Lot For Sale in Taguig City"
-            description="Impressive House and Lot with Roof Deck and Swimming Pool…"
-            price={45000000}
-            bedQuantity={2}
-            bathQuantity={2}
-            yearBuilt={2024}
-            landArea={1024}
-          />
+      <div className="flex flex-wrap justify-center mt-[450px] md:mt-16 md:space-x-10">
+        <PropertyCard />
       </div>
 
-      {/* Load Button */}
+      {/* Cards */}
+
+      {/* Load Button
       <div className="mt-16 flex justify-center mb-10">
         <LoadButton btnName={"Load more"} />
-      </div>
+      </div> */}
     </>
   );
 };

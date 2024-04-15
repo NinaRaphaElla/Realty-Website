@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MdLocationOn, MdEmail, MdLocalPhone, MdPhone } from "react-icons/md";
-import { RiArrowRightLine } from "react-icons/ri";
 
 const ContactUs = () => {
   const form = useRef();
@@ -45,13 +44,6 @@ const ContactUs = () => {
             </h1>
             <div className="text-sm">
               <p className="mb-2">You can also reach us through:</p>
-              {/* <h3 className="flex items-center w-[90%] mb-1 hover:text-accent cursor-pointer">
-                <span className="mr-2">
-                  <MdLocationOn />
-                </span>
-                Unit 309, 3rd Floor, West City Plaza, 66 West Ave, Quezon City,
-                1104 Metro Manila
-              </h3> */}
               <h3 className="flex items-center w-[90%] mb-1 hover:text-accent cursor-pointer">
                 <span className="mr-2">
                   <MdEmail />
@@ -97,6 +89,7 @@ const ContactUs = () => {
               type="text"
               name="user_name"
               placeholder="Enter your full name"
+              required
             />
             <label className="mt-3">Email Address</label>
             <input
@@ -104,6 +97,9 @@ const ContactUs = () => {
               type="text"
               name="user_email"
               placeholder="Enter your email address"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              size="30"
+              required
             />
 
             <label className="mt-3">Phone Number &#40;optional&#41;</label>
@@ -112,6 +108,7 @@ const ContactUs = () => {
               type="text"
               name="user_number"
               placeholder="Enter your phone number"
+              pattern="[0-9]{11}"
             />
             <label className="mt-3">Message</label>
             <textarea
@@ -120,6 +117,7 @@ const ContactUs = () => {
               name="user_message"
               placeholder="Enter your message"
               rows="5"
+              required
             ></textarea>
             <input
               className="cursor-pointer mt-4 font-playFair border-2 p-3 border-white text-white bg-accent lg:w-[40%] hover:bg-white hover:text-accent hover:border-accent ease-out duration-200"
