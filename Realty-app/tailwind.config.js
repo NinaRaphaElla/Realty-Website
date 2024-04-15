@@ -17,6 +17,7 @@ export default {
           faqs: "#CCD5D2",
         },
 
+        rawWhite: "#FFFFFF",
         black: "#1C1C1C",
         white: "#F9F9F9",
         gray: "#7F7F7F",
@@ -31,6 +32,7 @@ export default {
 
       boxShadow: {
         xl: ["0 2px 15px rgba(0, 0, 0, 0.10)"],
+        xxl: ["0 4px 16px rgba(0, 0, 0, 0.10)"],
       },
     },
   },
