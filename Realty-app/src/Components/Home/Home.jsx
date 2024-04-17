@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import PropertyCard from "../PropertyCard/PropertyCard";
 import Footer from "../Footer/Footer.jsx";
 import ContactUs from "../ContactUs/ContactUs.jsx";
 import Faqs from "../Faqs/Faqs.jsx";
+import SentModal from "../Modals/SentModal.jsx";
 
 import aboutImg1 from "./about-img1.png";
 import aboutImg2 from "./about-img2.png";
@@ -26,6 +27,7 @@ import {
 } from "react-icons/md";
 
 const Home = () => {
+  //navigate buttons
   const history = useHistory();
 
   const handleAboutUs = () => {
@@ -36,17 +38,33 @@ const Home = () => {
     history.push("/properties");
   };
 
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/property")
+      .then((res) => res.json())
+      .then((data) => {
+        const featured = data.filter(
+          (property) => property.isFeatured === true
+        );
+        setProperties(featured);
+      });
+  }, []);
+
   return (
     <>
       {/* Hero Section */}
       <section id="hero-section">
-        <div className="my-20 space-y-6">
-          <div className="mx-4 md:mx-16 md:flex md:items-center space-y-4 md:space-x-6">
-            <div>
-              <h1 className="whitespace-nowrap text-3xl">Welcome to</h1>
-              <h1 className="text-7xl md:text-6xl lg:text-8xl xl:text-9xl font-normal font-noto">
+        <div className="my-24 space-y-4 md:space-y-6">
+          <div className="mx-4 md:mx-8 lg:mx-16 md:flex md:items-center space-y-4 md:space-x-6">
+            <div className="-space-y-3 md:-space-y-0">
+              <h1 className="text-2xl lg:text-3xl">Welcome to</h1>
+              <h1 className="text-[3.4rem] md:text-6xl lg:text-[5rem] xl:text-[7rem] font-normal font-noto">
                 1568&#160;
                 <span className="text-primary font-playFair">Realty</span>
+              </h1>
+              <h1 className="whitespace-nowrap text-2xl lg:text-4xl">
+                <span className="font-noto">&</span> Development Corporation
               </h1>
             </div>
             <div className="flex-1">
@@ -55,41 +73,43 @@ const Home = () => {
           </div>
 
           {/* Layer 2 */}
-          <div className="flex flex-col-reverse md:flex-row mx-4 md:mx-16 md:space-x-6">
-            <div className="flex flex-col-reverse md:space-y-4 md:flex-col md:w-[50%]">
-              <div className="flex-1">
+          <div className="flex flex-col-reverse md:flex-row mx-4 md:mx-8 lg:mx-16 md:space-x-6">
+            <div className="flex flex-col-reverse space-y-4 md:flex-col md:w-[50%]">
+              <div className="flex-1 mt-4">
                 <img
                   className="object-cover h-full w-full"
                   src={heroImg2}
                   alt="Hero Image"
                 />
               </div>
-              <div className="flex justify-between text-center md:text-left">
-                <p className="flex flex-col text-3xl text-secondary-200">
+              <div className="flex justify-between text-center md:text-left lg:px-8">
+                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
                   0K+
-                  <span className="text-base md:text-sm text-black">
+                  <span className="text-sm md:text-sm text-black">
                     Happy Customers
                   </span>
                 </p>
-                <p className="flex flex-col text-3xl text-secondary-200">
+                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
                   000+
-                  <span className="text-base md:text-sm text-black">
+                  <span className="text-sm md:text-sm text-black">
                     Daily Inquiries
                   </span>
                 </p>
-                <p className="flex flex-col text-3xl text-secondary-200">
+                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
                   000+
-                  <span className="text-base md:text-sm  text-black">
+                  <span className="text-sm md:text-sm text-black">
                     Listed Properties
                   </span>
                 </p>
               </div>
             </div>
 
-            <div className="md:w-[50%] space-y-6">
+            <div className="md:w-[50%] space-y-4">
               <div className="lg:space-y-0">
-                <h1 className="text-4xl">Helping you to find your</h1>
-                <h1 className="text-6xl md:text-4xl lg:text-7xl xl:text-8xl text-primary">
+                <h1 className="whitespace-nowrap text-2xl lg:text-4xl">
+                  Helping you with your
+                </h1>
+                <h1 className=" text-4xl md:text-4xl lg:text-6xl xl:text-[5rem] text-primary whitespace-nowrap">
                   Perfect Property
                 </h1>
                 {/* <h1 className="text-4xl">awaits</h1> */}
@@ -107,24 +127,20 @@ const Home = () => {
       </section>
 
       {/* Powered by Intelliseven */}
-      <div className="bg-secondary-300 h-40 my-20 max-w-full flex flex-col justify-center items-center">
+      <div className="bg-secondary-300 h-40 my-16 w-full flex flex-col justify-center items-center -space-y-3">
         <p className="text-white text-base font-playFair">powered by</p>
-        <img
-          className="h-24 mt-[-0.9rem]"
-          alt="IntelliSeven Logo"
-          src={i7Logo}
-        />
+        <img className="h-20 md:h-24" alt="IntelliSeven Logo" src={i7Logo} />
       </div>
 
       {/* About us Section */}
-      <div className="mb-24">
+      <div className="mb-24 mx-4 md:mx-8 lg:mx-16">
         <div className="flex justify-center">
-          <h1 className="text-3xl md:text-5xl font-medium">Experience&nbsp;</h1>
+          <h1 className="text-2xl md:text-5xl font-medium">Experience&nbsp;</h1>
           <div>
-            <h1 className="text-3xl md:text-5xl font-medium text-primary">
+            <h1 className="text-2xl md:text-5xl font-medium text-primary">
               Excellence
             </h1>
-            <h1 className="text-3xl md:text-5xl font-medium">
+            <h1 className="text-2xl md:text-5xl font-medium">
               in Real&nbsp;<span className="text-primary">Estate</span>
             </h1>
             <p className="text-sm md:text-base">Learn more about us</p>
@@ -137,8 +153,8 @@ const Home = () => {
         </div>
 
         {/* About-layer-1 */}
-        <div className="lg:flex mx-4 mb-8 md:mx-16 items-center md:space-x-6">
-          <div>
+        <div className="lg:flex mb-8 items-center md:space-x-6">
+          <div className="flex-1">
             <img
               className="w-[100%] h-[100%]"
               alt="Property Image"
@@ -150,13 +166,13 @@ const Home = () => {
             <h1 className="text-secondary-300 text-3xl font-medium my-4">
               About <span className="font-noto">1568</span> Realty
             </h1>
-            <p className="my-6 text-black">
+            <p className="my-6 text-black text-sm md:text-base">
               We are your trusted partner in finding your dream home. With a
               team of experienced professionals that are dedicated in providing
               excellent service, we pride ourselves on our deep understanding of
               the market and our commitment to our client satisfaction.
             </p>
-            <p className="my-6 text-black text-base">
+            <p className="my-6 text-black text-sm md:text-base">
               With years of experience, we have provided a reputation for
               excellence, integrity, and reliability. Our clients trust us to
               guide them through every step of the buying, selling, or renting
@@ -169,9 +185,9 @@ const Home = () => {
         </div>
 
         {/* about us layer  */}
-        <div className="lg:flex mx-4 mb-8 md:mx-16 items-center md:space-x-6">
+        <div className="lg:flex mb-8 items-center space-y-6 md:space-x-6">
           {/* about-description */}
-          <div className="lg:w-[50%] space-y-8">
+          <div className="lg:w-[50%] space-y-4 md:space-y-8 lg:space-y-12">
             <div>
               <h1 className="flex items-center mb-2 text-2xl md:text-3xl font-medium text-primary">
                 <span className="mr-4 text-3xl">
@@ -210,7 +226,7 @@ const Home = () => {
         </div>
 
         {/* about us layer  */}
-        <div className="lg:flex mx-4 mb-8 md:mx-16 items-center md:space-x-6">
+        <div className="lg:flex mb-8 items-center space-y-6 md:space-x-6">
           <div className="w-[100%] md:w-[50%]">
             <img
               className="object-cover w-[100%] h-[100%]"
@@ -219,7 +235,7 @@ const Home = () => {
             />
           </div>
           {/* about-description */}
-          <div className="lg:w-[50%] space-y-8">
+          <div className="lg:w-[50%] space-y-8 lg:space-y-12">
             <div>
               <h1 className="flex items-center mb-2 text-2xl md:text-3xl font-medium text-primary">
                 <span className="mr-4 text-3xl">
@@ -253,7 +269,7 @@ const Home = () => {
 
       {/* Featured Properties */}
       <div className="bg-secondary-300 py-6 mb-24">
-        <div className="flex flex-col">
+        <div className="flex flex-col mx-4 md:mx-8 lg-mx-16">
           {/* Featured Intro */}
           <div className="flex items-center">
             <div className="bg-primary w-[100%] h-0.5"></div>
@@ -265,9 +281,9 @@ const Home = () => {
 
           <p className="text-white text-center">Find your perfect property</p>
 
-          {/* property card */}
-          <div className="flex space-x-10 justify-center my-9">
-            {<PropertyCard />}
+          {/* property cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center my-9 lg:px-24">
+            <PropertyCard properties={properties} />
           </div>
 
           <div className="flex justify-center">
@@ -279,34 +295,19 @@ const Home = () => {
         </div>
       </div>
 
+      {/* FAQS */}
       <section id="faqs-section">
-        {/* FAQS */}
         <div className="mb-24">
           <div className="flex items-center mb-4">
-            <div className="bg-white w-[100%] h-0.5"></div>
-            <h1 className="text-3xl md:text-4xl whitespace-nowrap mr-2 font-medium px-4 text-primary">
+            <div className="bg-white invisible md:visible  w-[100%] h-0.5"></div>
+            <h1 className="text-center text-2xl md:text-4xl md:whitespace-nowrap font-medium px-4 text-primary">
               <span className="text-black">Frequently Asked</span> Questions
             </h1>
-            <div className="bg-primary w-[100%] h-0.5"></div>
+            <div className="bg-primary invisible md:visible w-[100%] h-0.5"></div>
           </div>
 
           {/* faqs */}
-          <Faqs
-            question="How do I schedule a consultation or property viewing?"
-            answer="Simply contact us through our website or give us a call, and our team will be happy to assist you in scheduling a consultation or arranging property viewings."
-          />
-          <Faqs
-            question="Do you handle legal aspects of the transaction?"
-            answer="Yes, we provide legal and administrative support to ensure a smooth and hassle-free transaction, including handling paperwork and coordinating with legal professionals."
-          />
-          <Faqs
-            question="How do you determine the value of a property?"
-            answer="We conduct thorough market analysis, considering factors such as location, property condition, recent sales, and market trends to determine accurate property values."
-          />
-          <Faqs
-            question="How can I stay updated on new listings or market trends?"
-            answer="We conduct thorough market analysis, considering factors such as location, property condition, recent sales, and market trends to determine accurate property values."
-          />
+          <Faqs />
 
           <div className="text-center mt-8">
             <h3 className="text-base font-medium">

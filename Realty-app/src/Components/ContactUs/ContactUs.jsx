@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import SentModal from "../Modals/SentModal.jsx";
 import { MdLocationOn, MdEmail, MdLocalPhone, MdPhone } from "react-icons/md";
 
 const ContactUs = () => {
@@ -21,6 +22,17 @@ const ContactUs = () => {
           console.log("FAILED...", error.text);
         }
       );
+  };
+
+  //open modal
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -120,11 +132,13 @@ const ContactUs = () => {
               required
             ></textarea>
             <input
+              onClick={openModal}
               className="cursor-pointer mt-4 font-playFair border-2 p-3 border-white text-white bg-accent lg:w-[40%] hover:bg-white hover:text-accent hover:border-accent ease-out duration-200"
               type="submit"
               value="Send Message"
             />
           </form>
+          <SentModal open={modalOpen} onClose={closeModal} />
         </div>
       </div>
     </>
