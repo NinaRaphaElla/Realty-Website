@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import LoadButton from "../Buttons/LoadButton.jsx";
 import PropertyCard from "../PropertyCard/PropertyCard.jsx";
@@ -38,6 +38,16 @@ const Properties = () => {
     setSelectedPrice(price);
     setIsOpenPrice(false);
   };
+
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/property")
+      .then((res) => res.json())
+      .then((data) => {
+        setProperties(data);
+      });
+  }, []);
 
   return (
     <>
@@ -183,8 +193,8 @@ const Properties = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center mt-[450px] md:mt-16 md:space-x-10">
-        <PropertyCard />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center md:px-32 lg:px-32 mt-[450px] md:mt-24">
+        <PropertyCard properties={properties} />
       </div>
 
       {/* Cards */}
