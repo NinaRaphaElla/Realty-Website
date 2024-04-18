@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CTAButton from "../Buttons/CTAButton.jsx";
 import PropertyCard from "../PropertyCard/PropertyCard.jsx";
 import SliderImg from "./Slider.jsx";
-import profilepic from "./profile.png";
 
 import { BiLogoMessenger } from "react-icons/bi";
 import { FaFacebookF, FaLink } from "react-icons/fa";
@@ -19,14 +18,13 @@ const PropertyDetails = () => {
   return (
     <>
       {/* background images */}
-      <SliderImg/>
+
+      <SliderImg />
 
       {/*  Parent of Whole Details */}
       <div className="flex justify-between flex-wrap md:mx-16 mx-4 transition-all ease-in-out duration-300">
-
         {/* House Details */}
         <div className="Parent of House Details">
-
           {/* Status */}
           <div className="flex w-full justify-between">
             <div className="flex space-x-3 whitespace-nowrap justify-center items-center">

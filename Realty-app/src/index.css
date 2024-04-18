@@ -21,3 +21,12 @@ h1,
 h3 {
   font-family: "Playfair Display", serif;
 }
+
+/* selection */
+::moz-selection {
+  @apply bg-secondary-100 text-white;
+}
+
+::selection {
+  @apply bg-secondary-100 text-white;
+}

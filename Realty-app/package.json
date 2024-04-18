@@ -19,6 +19,7 @@
     "react-router-dom": "^5.3.4",
     "react-router-hash-link": "^2.4.3",
     "react-scroll": "^1.9.0",
+    "react-select": "^5.8.0",
     "react-spinners": "^0.13.8",
     "remixicon-react": "^1.0.0"
   },

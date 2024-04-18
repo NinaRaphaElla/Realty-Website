@@ -41,9 +41,9 @@ const PropertyCard = ({ properties }) => {
               </p>
             </div>
 
-            <div className="text-black p-4">
+            <div className="text-black p-4 overflow-hidden">
               <h1 className="mb-2 text-xl h-[25%]">{list.title}</h1>
-              <p className="mb-2 text-gray text-xs font-sans">
+              <p className="mb-2 text-gray text-xs font-sans line-clamp-2">
                 {list.description}
               </p>
               <p className="m-0 mb-2 text-xl font-sans font-semibold">

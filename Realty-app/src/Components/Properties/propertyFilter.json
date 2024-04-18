@@ -1,46 +1,103 @@
 {
-  "property_status": ["Any Status", "For Sale", "For Rent", "Sold"],
-
-  "property_types": [
-    "All types",
-    "Apartment",
-    "House",
-    "Condo",
-    "Townhouse",
-    "Land"
+  "status": [
+    { "value": "1", "label": "Any status" },
+    { "value": "2", "label": "For Sale" },
+    { "value": "3", "label": "For Rent" },
+    { "value": "4", "label": "Sold" }
   ],
 
-  "price_range": [
-    "₱150K - ₱300K",
-    "₱350K - ₱600K",
-    "₱500K - ₱900K",
-    "₱700K - ₱1.2M",
-    "₱900K - ₱1.6M",
-    "₱1M - ₱1.8M",
-    "₱1.2M - ₱2.2M",
-    "₱3M and Above"
+  "types": [
+    { "value": "1", "label": "All types" },
+    { "value": "2", "label": "Apartment" },
+    { "value": "3", "label": "House and lot" },
+    { "value": "4", "label": "Commercial lot" },
+    { "value": "5", "label": "Condo" },
+    { "value": "6", "label": "Land" },
+    { "value": "7", "label": "Townhouse" }
   ],
 
   "location": [
-    "Metro Manila",
-    "Cebu City",
-    "Davao City",
-    "Quezon City",
-    "Manila",
-    "Makati City",
-    "Taguig City",
-    "Cebu",
-    "Pasig City",
-    "Parañaque City",
-    "Mandaluyong City",
-    "Angeles City",
-    "Baguio City",
-    "Antipolo City",
-    "Bacolod City",
-    "Cagayan de Oro City",
-    "Iloilo City",
-    "Calamba City",
-    "Bacoor City",
-    "Dasmarinas City"
+    { "value": "1", "label": "All Main Location" },
+    { "value": "2", "label": "Albay" },
+    { "value": "3", "label": "Antipolo City" },
+    { "value": "4", "label": "Bataan" },
+    { "value": "5", "label": "Batangas" },
+    { "value": "6", "label": "Bulacan" },
+    { "value": "7", "label": "Caloocan City" },
+    { "value": "8", "label": "Cavite City" },
+    { "value": "9", "label": "Laguna" },
+    { "value": "10", "label": "Lipa City" },
+    { "value": "11", "label": "Makati City" },
+    { "value": "12", "label": "Metro Manila" }
+  ],
+
+  "price": [
+    { "value": "1", "label": "All Main Location" },
+    { "value": "2", "label": "Albay" },
+    { "value": "3", "label": "Antipolo City" },
+    { "value": "4", "label": "Bataan" },
+    { "value": "5", "label": "Batangas" },
+    { "value": "6", "label": "Bulacan" },
+    { "value": "7", "label": "Caloocan City" },
+    { "value": "8", "label": "Cavite City" },
+    { "value": "9", "label": "Laguna" },
+    { "value": "10", "label": "Lipa City" },
+    { "value": "11", "label": "Makati City" },
+    { "value": "12", "label": "Metro Manila" }
+  ],
+
+  "price_range": [
+    {
+      "value": 1,
+      "label": "Any Price"
+    },
+    {
+      "value": 2,
+      "label": "₱150K - ₱300K",
+      "minPrice": 150000,
+      "maxPrice": 300000
+    },
+    {
+      "value": 3,
+      "label": "₱350K - ₱600K",
+      "minPrice": 350000,
+      "maxPrice": 600000
+    },
+    {
+      "value": 4,
+      "label": "₱500K - ₱900K",
+      "minPrice": 500000,
+      "maxPrice": 900000
+    },
+    {
+      "value": 5,
+      "label": "₱700K - ₱1.2M",
+      "minPrice": 700000,
+      "maxPrice": 1200000
+    },
+    {
+      "value": 6,
+      "label": "₱900K - ₱1.6M",
+      "minPrice": 900000,
+      "maxPrice": 1600000
+    },
+    {
+      "value": 7,
+      "label": "₱1M - ₱1.8M",
+      "minPrice": 1000000,
+      "maxPrice": 1800000
+    },
+    {
+      "value": 8,
+      "label": "₱1.2M - ₱2.2M",
+      "minPrice": 1200000,
+      "maxPrice": 2200000
+    },
+    {
+      "value": 9,
+      "label": "₱3M and Above",
+      "minPrice": 3000000,
+      "maxPrice": null
+    }
   ]
 }
