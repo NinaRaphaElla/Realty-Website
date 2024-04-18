@@ -4,7 +4,7 @@
       "id": 1,
       "propertyImg": "/propertyImg/propImg_1.png",
       "title": "Hagonoy Property 1",
-      "description": "Impressive House and Lot with Roof Deck and Swimming Pool…",
+      "description": "Step back in time and experience the allure of a bygone era with this enchanting vintage house nestled in the heart of Bagumbayan, Taguig City. A perfect blend of classic elegance and modern convenience...",
       "price": 6000000,
       "overview": [
         {
@@ -16,76 +16,79 @@
       ],
       "isFeatured": true,
       "status": "For Rent",
-      "loc": "location sample"
+      "type": "House and lot",
+      "location": "location sample",
+      "features": {
+        "interior": ["Bedroom/s: 3", "Bathroom/s: 2", "Kitchen: 1"],
+        "exterior": ["Garage: 1", "Garden: 1", "Swimming pool: 1"],
+        "appliances": ["Air conditioning", "Washing machine", "Refrigerators"],
+        "utilities": [
+          "Public Water Source",
+          "High-speed internet available",
+          "Separate Meters",
+          "Sewer Available"
+        ],
+        "distances": ["School: 100km", "Cafe: 200 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15452.594162184865!2d121.04492640678077!3d14.476158602478291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cfa4afd8f41b%3A0xd48e183dc204b5cc!2sBagumbayan%2C%20Taguig%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1712569427478!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile.png",
+          "name": "Nina Velasco",
+          "email": "ninavelasco@gmail.com",
+          "number": "0906 946 2736"
+        }
+      ]
     },
 
     {
       "id": 2,
       "propertyImg": "/propertyImg/propImg_2.png",
       "title": "Hagonoy Property 2",
-      "description": "Impressive House and Lot with Roof Deck and Swimming Pool…",
-      "price": 6000000,
-      "overview": [
-        {
-          "bedroom": 4,
-          "bathroom": 2,
-          "yearBuilt": 2018,
-          "area": 5000
-        }
-      ],
-      "isFeatured": true,
-      "status": "For Rent"
-    },
-    {
-      "id": 3,
-      "propertyImg": "/propertyImg/propImg_3.png",
-      "title": "Pandi Commercial Lot",
-      "description": "Impressive House and Lot with Roof Deck and Swimming Pool…",
-      "price": 5000000,
-      "overview": [
-        {
-          "bedroom": 2,
-          "bathroom": 6,
-          "yearBuilt": 2024,
-          "area": 1072
-        }
-      ],
-      "isFeatured": false,
-      "status": "For Rent"
-    },
-    {
-      "id": 4,
-      "propertyImg": "/propertyImg/propImg_3.png",
-      "title": "Calumpit Branch Property",
-      "description": "Impressive House and Lot with Roof Deck and Swimming Pool…",
+      "description": "Step back in time and experience the allure of a bygone era with this enchanting vintage house nestled in the heart of Bagumbayan, Taguig City. A perfect blend of classic elegance and modern convenience",
       "price": 5000000,
       "overview": [
         {
           "bedroom": 2,
           "bathroom": 3,
           "yearBuilt": 2024,
-          "area": 1072
+          "area": 7104
         }
       ],
       "isFeatured": true,
-      "status": "For Rent"
-    },
-    {
-      "id": 5,
-      "propertyImg": "/propertyImg/propImg_2.png",
-      "title": "Tagaytay House and Lot",
-      "description": "Impressive House and Lot with Roof Deck and Swimming Pool…",
-      "price": 5000000,
-      "overview": [
+      "status": "For Sale",
+      "type": "Commercial lot",
+      "location": "Hagonoy Bulacan",
+      "features": {
+        "interior": [
+          "Bedroom/s: 2",
+          "Bathroom/s: 1",
+          "Kitchen: 2",
+          "Balcony: 1"
+        ],
+        "exterior": [
+          "Garage: 1",
+          "Garden: 1",
+          "Swimming pool: 1",
+          "Storage Room: 1"
+        ],
+        "appliances": ["Air conditioning", "Refrigerators"],
+        "utilities": [
+          "High-speed internet available",
+          "Separate Meters",
+          "Sewer Available"
+        ],
+        "distances": ["School: 100km", "Cafe: 200 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15423.972327428637!2d120.92426928014717!3d14.88166526925762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ab6d7e85247b%3A0x7cb9f543883de30a!2sMasagana%20Elementary%20School!5e0!3m2!1sen!2sph!4v1713403801652!5m2!1sen!2sph",
+      "agent": [
         {
-          "bedroom": 2,
-          "bathroom": 3,
-          "yearBuilt": 2024,
-          "area": 1072
+          "profile": "/propertyImg/propImg_1.png",
+          "name": "Alyssa Joy Del Rosario",
+          "email": "alyssajoy@gmail.com",
+          "number": "0955 123 7738"
         }
-      ],
-      "isFeatured": false,
-      "status": "For Sale"
+      ]
     }
   ]
 }
