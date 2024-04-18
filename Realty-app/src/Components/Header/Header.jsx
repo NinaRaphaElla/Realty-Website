@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
-import mainLogo from "./Logo.png";
+import React, { useState } from "react";
 import { RiCloseLine, RiMenu3Fill } from "react-icons/ri";
-import { Link } from "react-scroll";
 import { useHistory } from "react-router-dom";
+import mainLogo from "./HeaderLogo.png";
 
 const Header = () => {
   const [menuState, setMenuState] = useState();
@@ -57,7 +56,7 @@ const Header = () => {
   return (
     <div>
       <header className="fixed left-0 right-0 top-0 flex items-center justify-between w-auto py-5 px-4 md:px-8 lg:px-16  shadow-xl font-playFair z-50 bg-white">
-        <img className="h-7 whitespace-nowrap cursor-pointer" src={mainLogo} />
+        <img className="h-10 whitespace-nowrap cursor-pointer" src={mainLogo} />
         <div onClick={setMenu} className="md:hidden cursor-pointer">
           {menuState ? (
             <RiCloseLine className="text-primary size-6" />

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 
-import PropertyCard from "../PropertyCard/PropertyCard";
-import Footer from "../Footer/Footer.jsx";
 import ContactUs from "../ContactUs/ContactUs.jsx";
 import Faqs from "../Faqs/Faqs.jsx";
-import SentModal from "../Modals/SentModal.jsx";
+import Footer from "../Footer/Footer.jsx";
+import PropertyCard from "../PropertyCard/PropertyCard";
+import Counter from "../SplashScreen/Counter.jsx";
+import CounterPlus from "../SplashScreen/CounterPlus.jsx";
 
 import aboutImg1 from "./about-img1.png";
 import aboutImg2 from "./about-img2.png";
@@ -15,16 +15,15 @@ import heroImg1 from "./hero_img1.png";
 import heroImg2 from "./hero_img2.png";
 import heroImg3 from "./hero_img3.png";
 import i7Logo from "./logo-intelliseven.png";
-import peopleSvg from "./people.svg";
 import outro from "./outro.png";
 
-import CTAButton from "../Buttons/CTAButton";
 import {
-  MdOutlineMiscellaneousServices,
-  MdHandshake,
-  MdPayments,
   MdGroups2,
+  MdHandshake,
+  MdOutlineMiscellaneousServices,
+  MdPayments,
 } from "react-icons/md";
+import CTAButton from "../Buttons/CTAButton";
 
 const Home = () => {
   //navigate buttons
@@ -83,20 +82,20 @@ const Home = () => {
                 />
               </div>
               <div className="flex justify-between text-center md:text-left lg:px-8">
-                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
-                  0K+
+                <p>
+                  <Counter end={150} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Happy Customers
                   </span>
                 </p>
-                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
-                  000+
+                <p>
+                  <CounterPlus end={200} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Daily Inquiries
                   </span>
                 </p>
-                <p className="flex flex-col text-2xl md:text-3xl text-secondary-200">
-                  000+
+                <p>
+                  <CounterPlus end={100} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Listed Properties
                   </span>

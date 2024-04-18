@@ -1,7 +1,8 @@
-import singleLogo from "./single-logo.png";
 import CTAButton from "../Buttons/CTAButton";
-import instagramSvg from "./instagram.svg";
+import singleLogo from "./bago.png";
 import facebookSvg from "./facebook.svg";
+import instagramSvg from "./instagram.svg";
+import text from "./textlogo.png";
 import twitterSvg from "./twitter.svg";
 
 const Footer = () => {
@@ -15,13 +16,11 @@ const Footer = () => {
 
   return (
     <>
-      <div className="mx-4 md:mx-16 mb-2 mt-16">
+      <div className="mx-4 md:mx-16 mb-2 mt-24">
         {/* logo */}
         <div className="mb-8">
-          <img className="h-12" src={singleLogo} />
-          <h1 className="text-3xl font-bold">
-            <span className="font-noto">1568</span> Realty
-          </h1>
+          <img className="h-20" src={singleLogo} />
+          <img className="mt-4 h-12" src={text} />
         </div>
 
         <div className="lg:flex mb-12">
