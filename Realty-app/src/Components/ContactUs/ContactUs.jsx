@@ -4,25 +4,7 @@ import SentModal from "../Modals/SentModal.jsx";
 import { MdLocationOn, MdEmail, MdLocalPhone, MdPhone } from "react-icons/md";
 
 const ContactUs = () => {
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("service_cq11c5a", "template_ggnn21d", form.current, {
-        publicKey: "fWSKKfR5PgZb5gI6Q",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          alert("Message sent");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
-  };
+  const form = useRef(null);
 
   //open modal
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,6 +15,64 @@ const ContactUs = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  //Validation message
+  const [message, setMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    //getting form data
+    const data = new FormData(form.current);
+    const fullName = data.get("user_name");
+    const email = data.get("user_email");
+    const phoneNum = data.get("user_number");
+    const message = data.get("user_message");
+
+    //validation
+
+    if (!fullName) {
+      setMessage("Please enter your full name");
+      return;
+    }
+
+    if (!email) {
+      setMessage("Please enter your email address");
+      return;
+    }
+
+    if (!message) {
+      setMessage("Please enter your message");
+      return;
+    }
+
+    if (!validEmail(email)) {
+      setMessage("Please enter a valid email address");
+      return;
+    }
+
+    //email js config
+    emailjs
+      .sendForm("service_cq11c5a", "template_ggnn21d", form.current, {
+        publicKey: "fWSKKfR5PgZb5gI6Q",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          openModal();
+          form.current.reset();
+          setMessage("");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+
+  const validEmail = (email) => {
+    const response = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return response.test(email);
   };
 
   return (
@@ -90,6 +130,7 @@ const ContactUs = () => {
             Feel free to reach out to us and connect with one of our welcoming
             representatives.
           </p>
+          <div className="text-red-500 my-3 text-sm">{message}</div>
           <form
             ref={form}
             onSubmit={sendEmail}
@@ -101,7 +142,6 @@ const ContactUs = () => {
               type="text"
               name="user_name"
               placeholder="Enter your full name"
-              required
             />
             <label className="mt-3">Email Address</label>
             <input
@@ -109,9 +149,6 @@ const ContactUs = () => {
               type="text"
               name="user_email"
               placeholder="Enter your email address"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              size="30"
-              required
             />
 
             <label className="mt-3">Phone Number &#40;optional&#41;</label>
@@ -128,17 +165,15 @@ const ContactUs = () => {
               type="text"
               name="user_message"
               placeholder="Enter your message"
-              rows="5"
-              required
+              rows="4"
             ></textarea>
             <input
-              onClick={openModal}
               className="cursor-pointer mt-4 font-playFair border-2 p-3 border-white text-white bg-accent lg:w-[40%] hover:bg-white hover:text-accent hover:border-accent ease-out duration-200"
               type="submit"
               value="Send Message"
             />
           </form>
-          <SentModal open={modalOpen} onClose={closeModal} />
+          <SentModal onClose={closeModal} open={modalOpen} />
         </div>
       </div>
     </>
