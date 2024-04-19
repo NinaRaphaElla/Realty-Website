@@ -54,11 +54,11 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section id="hero-section">
-        <div className="my-24 space-y-4 md:space-y-4">
+        <div className="my-24 space-y-4 md:space-y-6">
           <div className="mx-4 md:mx-8 lg:mx-16 md:flex md:items-center space-y-4 md:space-x-6">
-            <div className="-space-y-3 md:space-y-2">
+            <div className="-space-y-3 md:-space-y-0">
               <h1 className="text-2xl lg:text-3xl">Welcome to</h1>
-              <h1 className="text-[3.4rem] md:text-6xl lg:text-[5.5rem] xl:text-[7rem] font-normal font-noto">
+              <h1 className="text-[3.4rem] md:text-6xl lg:text-[5rem] xl:text-[7rem] font-normal font-noto">
                 1568&#160;
                 <span className="text-primary font-playFair">Realty</span>
               </h1>
@@ -83,19 +83,19 @@ const Home = () => {
               </div>
               <div className="flex justify-between text-center md:text-left lg:px-8">
                 <p>
-                  <Counter end={150} start={0} />
+                  <Counter end={150} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Happy Customers
                   </span>
                 </p>
                 <p>
-                  <CounterPlus end={200} start={0} />
+                  <CounterPlus end={200} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Daily Inquiries
                   </span>
                 </p>
                 <p>
-                  <CounterPlus end={100} start={0} />
+                  <CounterPlus end={100} start={0}/>
                   <span className="text-sm md:text-sm text-black">
                     Listed Properties
                   </span>
@@ -105,10 +105,10 @@ const Home = () => {
 
             <div className="md:w-[50%] space-y-4">
               <div className="lg:space-y-0">
-                <h1 className="whitespace-nowrap text-2xl lg:text-3xl">
+                <h1 className="whitespace-nowrap text-2xl lg:text-4xl">
                   Helping you with your
                 </h1>
-                <h1 className=" text-4xl md:text-4xl lg:text-7xl xl:text-[5rem] text-primary whitespace-nowrap">
+                <h1 className=" text-4xl md:text-4xl lg:text-6xl xl:text-[5rem] text-primary whitespace-nowrap">
                   Perfect Property
                 </h1>
                 {/* <h1 className="text-4xl">awaits</h1> */}
@@ -127,7 +127,7 @@ const Home = () => {
 
       {/* Powered by Intelliseven */}
       <div className="bg-secondary-300 h-40 my-16 w-full flex flex-col justify-center items-center -space-y-3">
-        <p className="text-white text-base font-playFair">powered by</p>
+        <p className="mt-4 text-white text-base font-playFair">powered by</p>
         <img className="h-20 md:h-24" alt="IntelliSeven Logo" src={i7Logo} />
       </div>
 
@@ -152,7 +152,7 @@ const Home = () => {
         </div>
 
         {/* About-layer-1 */}
-        <div className="lg:flex mb-8 items-center md:space-x-6">
+        <div className="lg:flex mb-8 items-center lg:space-x-6">
           <div className="flex-1">
             <img
               className="w-[100%] h-[100%]"
@@ -162,29 +162,30 @@ const Home = () => {
           </div>
           {/* about-description */}
           <div className="lg:w-[50%]">
-            <h1 className="text-secondary-300 text-3xl font-medium my-4">
+            <h1 className="lg:ml-5 text-secondary-300 text-3xl font-medium my-4">
               About <span className="font-noto">1568</span> Realty
             </h1>
-            <p className="my-6 text-black text-sm md:text-base">
+            <p className="lg:ml-5 my-6 text-black text-sm md:text-base">
               We are your trusted partner in finding your dream home. With a
               team of experienced professionals that are dedicated in providing
               excellent service, we pride ourselves on our deep understanding of
               the market and our commitment to our client satisfaction.
             </p>
-            <p className="my-6 text-black text-sm md:text-base">
+            <p className="lg:ml-5 my-6 text-black text-sm md:text-base">
               With years of experience, we have provided a reputation for
               excellence, integrity, and reliability. Our clients trust us to
               guide them through every step of the buying, selling, or renting
               process, ensuring a smooth and stress-free experience from start
               to finish.
             </p>
-
-            <CTAButton btnName={"Learn more"} onClick={handleAboutUs} />
+            <div className="lg:ml-5">
+              <CTAButton btnName={"Learn more"} onClick={handleAboutUs} />
+            </div>
           </div>
         </div>
 
         {/* about us layer  */}
-        <div className="lg:flex mb-8 items-center space-y-6 md:space-x-6">
+        <div className="lg:flex mb-8 items-center space-y-6 lg:space-x-6">
           {/* about-description */}
           <div className="lg:w-[50%] space-y-4 md:space-y-8 lg:space-y-12">
             <div>
@@ -215,7 +216,7 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div className="w-[100%] md:w-[50%]">
+          <div className="flex-1">
             <img
               className="object-cover w-[100%] h-[100%]"
               alt="Property Image"
@@ -225,10 +226,10 @@ const Home = () => {
         </div>
 
         {/* about us layer  */}
-        <div className="lg:flex mb-8 items-center space-y-6 md:space-x-6">
-          <div className="w-[100%] md:w-[50%]">
+        <div className="lg:flex mb-8 items-center space-y-8 lg:space-x-6">
+          <div className="flex-1">
             <img
-              className="object-cover w-[100%] h-[100%]"
+              className="mt-6 object-cover w-[100%] h-[100%]"
               alt="Property Image"
               src={aboutImg3}
             />
@@ -236,13 +237,13 @@ const Home = () => {
           {/* about-description */}
           <div className="lg:w-[50%] space-y-8 lg:space-y-12">
             <div>
-              <h1 className="flex items-center mb-2 text-2xl md:text-3xl font-medium text-primary">
+              <h1 className="flex items-center lg:ml-5 mb-2 text-2xl md:text-3xl font-medium text-primary">
                 <span className="mr-4 text-3xl">
                   <MdPayments />
                 </span>
                 Secure Payment
               </h1>
-              <p className="text-sm md:text-base">
+              <p className="lg:ml-5 text-sm md:text-base">
                 Advanced encryption and robust protocols ensure secure and
                 worry-free transactions, providing peace of mind to our clients
                 throughout the buying and selling process.
@@ -250,13 +251,13 @@ const Home = () => {
             </div>
 
             <div>
-              <h1 className="flex items-center mb-2 text-2xl md:text-3xl font-medium text-primary">
+              <h1 className="flex items-center lg:ml-5 mb-2 text-2xl md:text-3xl font-medium text-primary">
                 <span className="mr-4 text-3xl">
                   <MdGroups2 />
                 </span>
                 Extensive Network
               </h1>
-              <p className="text-sm md:text-base">
+              <p className="lg:ml-5 text-sm md:text-base">
                 With an extensive network of industry connections and resources,
                 we have access to a wide range of properties, including
                 exclusive listings that may not be available to the public.
@@ -267,7 +268,7 @@ const Home = () => {
       </div>
 
       {/* Featured Properties */}
-      <div className="bg-secondary-300 py-6 mb-24">
+      <div className="bg-secondary-300 py-8 mb-24">
         <div className="flex flex-col mx-4 md:mx-8 lg-mx-16">
           {/* Featured Intro */}
           <div className="flex items-center">
@@ -281,11 +282,11 @@ const Home = () => {
           <p className="text-white text-center">Find your perfect property</p>
 
           {/* property cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center my-9 lg:px-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center md my-9 lg:px-24">
             <PropertyCard properties={properties} />
           </div>
 
-          <div className="flex justify-center">
+          <div className="mt-2 flex justify-center">
             <CTAButton
               btnName={"View all listings"}
               onClick={handleViewListings}
@@ -334,7 +335,7 @@ const Home = () => {
           <p className="text-base md:text-sm lg:text-base xl:text-base text-white mb-4">
             Because we offer the finest selection of houses and lots for sale.
           </p>
-          <div className="flex flex-col space-y-2 sm:space-y-2 lg:flex-row lg:justify-start lg:space-x-4 lg:space-y-0 whitespace-nowrap justify-between xl:justify-start xl:space-x-4">
+          <div className="flex flex-col mt-4 space-y-2 sm:space-y-2 lg:flex-row lg:justify-start lg:space-x-4 lg:space-y-0 whitespace-nowrap justify-between xl:justify-start xl:space-x-4">
             <CTAButton btnName={"About us"} onClick={handleAboutUs} />
             <CTAButton btnName={"View listings"} onClick={handleViewListings} />
           </div>

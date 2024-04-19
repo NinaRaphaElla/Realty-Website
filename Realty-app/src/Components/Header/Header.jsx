@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RiCloseLine, RiMenu3Fill } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
-import mainLogo from "./HeaderLogo.png";
+import mainLogo from "./Realty-Logo.png";
 
 const Header = () => {
   const [menuState, setMenuState] = useState();
@@ -55,8 +55,8 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed left-0 right-0 top-0 flex items-center justify-between w-auto py-5 px-4 md:px-8 lg:px-16  shadow-xl font-playFair z-50 bg-white">
-        <img className="h-10 whitespace-nowrap cursor-pointer" src={mainLogo} />
+      <header className="fixed left-0 right-0 top-0 flex items-center justify-between w-auto py-5 px-4 md:px-8 lg:px-16  shadow-xl font-playFair z-50 bg-rawWhite">
+        <img className="lg:h-9 md:h-7 h-6 whitespace-nowrap cursor-pointer transition-all ease-in-out duration-300" src={mainLogo} />
         <div onClick={setMenu} className="md:hidden cursor-pointer">
           {menuState ? (
             <RiCloseLine className="text-primary size-6" />
@@ -65,9 +65,9 @@ const Header = () => {
           )}
         </div>
 
-        <ul className="md:flex md:items-center whitespace-nowrap text-base text-black m-0 p-0 w-full md:w-auto  bg-white hidden">
+        <ul className="md:flex md:items-center whitespace-nowrap text-base text-black m-0 p-0 w-full md:w-auto  bg-rawWhite hidden">
           <li
-            className={`md:ml-8 text-sm cursor-pointer px-16 md:px-0 hover:text-accent ${
+            className={`md:ml-8 text-sm font-medium cursor-pointer px-16 md:px-0 hover:text-accent ${
               activeItem === "Home"
                 ? "text-accent border-b-2 pb-1 transition-all ease-in-out duration-400"
                 : "text-black"
@@ -78,7 +78,7 @@ const Header = () => {
             </a>
           </li>
           <li
-            className={`md:ml-8 text-sm cursor-pointer px-16 md:px-0 hover:text-accent ${
+            className={`md:ml-8 text-sm font-medium cursor-pointer px-16 md:px-0 hover:text-accent ${
               activeItem === "Properties"
                 ? "text-accent border-b-2 pb-1 transition-all ease-in-out duration-400"
                 : "text-black"
@@ -89,7 +89,7 @@ const Header = () => {
             </a>
           </li>
           <li
-            className={`md:ml-8 text-sm cursor-pointer px-16 md:px-0 hover:text-accent ${
+            className={`md:ml-8 text-sm font-medium cursor-pointer px-16 md:px-0 hover:text-accent ${
               activeItem === "About"
                 ? "text-accent border-b-2 pb-1 transition-all ease-in-out duration-400"
                 : "text-black"
@@ -100,7 +100,7 @@ const Header = () => {
             </a>
           </li>
           <li
-            className={`md:ml-8 text-sm cursor-pointer px-16 md:px-0 hover:text-accent ${
+            className={`md:ml-8 text-sm font-medium cursor-pointer px-16 md:px-0 hover:text-accent ${
               activeItem === "FAQs"
                 ? "text-accent border-b-2 pb-1 transition-all ease-in-out duration-400"
                 : "text-black"
@@ -111,7 +111,7 @@ const Header = () => {
             </a>
           </li>
           <li
-            className={`md:ml-8 text-sm cursor-pointer px-4 py-2 bg-accent text-white border-2 border-accent hover:bg-white hover:border-accent hover:text-accent ${
+            className={`md:ml-8 text-sm font-medium cursor-pointer px-4 py-2 bg-accent text-white border-2 border-accent hover:bg-white hover:border-accent hover:text-accent ${
               activeItem === "Contact"
                 ? "bg-white border-accent text-accent"
                 : " bg-accent  text-white"

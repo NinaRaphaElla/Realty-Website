@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import peopleSvg from "../Home/people.svg";
-import PropertyCard from "../PropertyCard/PropertyCard.jsx";
 import Footer from "../Footer/Footer.jsx";
+import PropertyCard from "../PropertyCard/PropertyCard.jsx";
 
-import image from "./AboutImage.png";
 import CTAButton from "../Buttons/CTAButton.jsx";
+import image from "./AboutImage.png";
 
 import {
-  MdOutlineMiscellaneousServices,
-  MdHandshake,
-  MdPayments,
   MdGroups2,
+  MdHandshake,
+  MdOutlineMiscellaneousServices,
+  MdPayments,
 } from "react-icons/md";
 
 const AboutUs = () => {
@@ -48,14 +47,14 @@ const AboutUs = () => {
 
         {/* Tagline */}
         <div className="flex flex-wrap font-medium -space-y-1 lg:space-y-0 lg:space-x-2 lg:justify-center">
-          <h1 className="text-3xl lg:text-4xl">We are your</h1>
+          <h1 className="text-3xl lg:text-4xl font-normal">We are your</h1>
           <div className="md:space-y-3">
-            <h1 className="text-primary text-5xl lg:text-4xl whitespace-nowrap">
+            <h1 className="text-primary text-5xl lg:text-4xl font-semibold whitespace-nowrap">
               trusted partner
             </h1>
-            <h1 className="text-black text-3xl">
+            <h1 className="text-black text-3xl lg:text-4xl font-normal">
               in finding your&#160;
-              <span className="text-primary">dream home</span>
+              <span className="text-primary font-semibold">dream home</span>
             </h1>
           </div>
         </div>
