@@ -7,6 +7,8 @@ import photo from "./PropertiesImage.png";
 
 import PropertyCard from "../PropertyCard/PropertyCard.jsx";
 import propertyFilter from "./propertyFilter.json";
+import Footer from "../Footer/Footer.jsx";
+import LoadButton from "../Buttons/LoadButton.jsx";
 
 const Properties = () => {
   //fetching data
@@ -41,43 +43,59 @@ const Properties = () => {
   };
 
   //filter
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const [selectedType, setSelectedType] = useState(null);
+  // const [selectedOption, setSelectedOption] = useState(null);
 
   const [selectedStatus, setSelectedStatus] = useState(null);
-
+  const [selectedType, setSelectedType] = useState(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
-
   const [selectedPrice, setSelectedPrice] = useState(null);
 
-  const handleOption = (selectedOption) => {
-    setSelectedOption(selectedOption);
+  const handleStatus = (selectedOption) => {
+    setSelectedStatus(selectedOption);
   };
 
-  const handleType = (selectedType) => {
-    setSelectedType(selectedType);
+  const handleType = (selectedOption) => {
+    setSelectedType(selectedOption);
   };
 
-  const handleStatus = (selectedStatus) => {
-    setSelectedStatus(selectedStatus);
+  const handleLocation = (selectedOption) => {
+    setSelectedLocation(selectedOption);
   };
 
-  const handleLocation = (selectedLocation) => {
-    setSelectedLocation(selectedLocation);
+  const handlePrice = (selectedOption) => {
+    setSelectedPrice(selectedOption);
   };
 
-  // const filteredProperties = properties.filter((property) => {
-  //   return (
-  //     (!selectedType || property.type === selectedType.label) &&
-  //     (!selectedStatus || property.status === selectedStatus.label) &&
-  //     (!selectedLocation || property.location === selectedLocation.label)
-  //   );
-  // });
+  const filteredProperties = properties.filter((property) => {
+    let Filter = true;
 
-  const filteredProperties = selectedOption
-    ? properties.filter((property) => property.status === selectedOption.label)
-    : properties;
+    if (selectedStatus) {
+      Filter = Filter && property.status === selectedStatus?.label;
+    }
+
+    if (selectedType) {
+      Filter = Filter && property.type === selectedType?.label;
+    }
+
+    if (selectedLocation) {
+      Filter =
+        Filter &&
+        property.address.some((addr) => addr.city === selectedLocation.label);
+    }
+
+    if (selectedPrice) {
+      Filter =
+        Filter &&
+        property.price >= selectedPrice.min &&
+        property.price <= selectedPrice.max;
+    }
+
+    return Filter;
+  });
+
+  // const filteredProperties = selectedOption
+  //   ? properties.filter((property) => property.status === selectedOption.label)
+  //   : properties;
 
   console.log("Selected option:", selectedType);
   console.log(filteredProperties);
@@ -102,9 +120,8 @@ const Properties = () => {
               <Select
                 options={propertyFilter.status}
                 styles={customStyles}
-                placeholder="Select property type"
-                value={selectedOption}
-                onChange={handleOption}
+                onChange={handleStatus}
+                value={selectedStatus}
               />
             </div>
 
@@ -112,14 +129,24 @@ const Properties = () => {
               <label className="text-sm text-black text-opacity-75">
                 Property Types
               </label>
-              <Select options={propertyFilter.types} styles={customStyles} />
+              <Select
+                options={propertyFilter.types}
+                styles={customStyles}
+                onChange={handleType}
+                value={selectedType}
+              />
             </div>
 
             <div className="w-[100%] md:w[20%] space-y-2">
               <label className="text-sm text-black text-opacity-75">
                 Main Location
               </label>
-              <Select options={propertyFilter.location} styles={customStyles} />
+              <Select
+                options={propertyFilter.location}
+                styles={customStyles}
+                onChange={handleLocation}
+                value={selectedLocation}
+              />
             </div>
 
             <div className="w-[100%] md:w[20%] space-y-2">
@@ -129,9 +156,10 @@ const Properties = () => {
               <Select
                 options={propertyFilter.price_range}
                 styles={customStyles}
+                onChange={handlePrice}
+                value={selectedPrice}
               />
             </div>
-
             {/* Search Button */}
             {/* <div className="w-full md:w-[20%]">
               <label className="text-sm text-white text-opacity-75">
@@ -146,16 +174,19 @@ const Properties = () => {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center md:px-32 lg:px-32 mt-[450px] md:mt-24">
-        <PropertyCard properties={filteredProperties} />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 justify-items-center md:px-32 lg:px-32 mt-[450px] md:mt-24">
+        {filteredProperties.length === 0 ? (
+          <div className="absolute ">No Data Found</div>
+        ) : (
+          <>
+            <PropertyCard properties={filteredProperties} />
+          </>
+        )}
       </div>
-
-      {/* Cards */}
-
-      {/* Load Button
-      <div className="mt-16 flex justify-center mb-10">
+      <div className="mt-8">
         <LoadButton btnName={"Load more"} />
-      </div> */}
+      </div>
+      <Footer />
     </>
   );
 };

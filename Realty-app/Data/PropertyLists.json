@@ -3,23 +3,28 @@
     {
       "id": 1,
       "propertyImg": "/propertyImg/propImg_1.png",
-      "title": "Hagonoy Property 1",
-      "description": "Step back in time and experience the allure of a bygone era with this enchanting vintage house nestled in the heart of Bagumbayan, Taguig City. A perfect blend of classic elegance and modern convenience...",
-      "price": 6000000,
+      "title": "Modern Contemporary House and Lot",
+      "description": "Discover the essence of modern living in this spacious contemporary home situated in the heart of Makati City. Boasting elegant interiors, ample living space, and state-of-the-art amenities, this property offers the epitome of luxurious urban lifestyle.",
+      "price": 8500000,
       "overview": [
         {
-          "bedroom": 4,
-          "bathroom": 2,
-          "yearBuilt": 2018,
-          "area": 5000
+          "bedroom": 5,
+          "bathroom": 4,
+          "yearBuilt": 2015,
+          "area": 6000
         }
       ],
       "isFeatured": true,
-      "status": "For Rent",
+      "status": "For Sale",
       "type": "House and lot",
-      "location": "location sample",
+      "address": [
+        {
+          "street": "123 Acacia Avenue",
+          "city": "Makati City"
+        }
+      ],
       "features": {
-        "interior": ["Bedroom/s: 3", "Bathroom/s: 2", "Kitchen: 1"],
+        "interior": ["Bedroom/s: 5", "Bathroom/s: 4", "Kitchen: 1"],
         "exterior": ["Garage: 1", "Garden: 1", "Swimming pool: 1"],
         "appliances": ["Air conditioning", "Washing machine", "Refrigerators"],
         "utilities": [
@@ -44,49 +49,382 @@
     {
       "id": 2,
       "propertyImg": "/propertyImg/propImg_2.png",
-      "title": "Hagonoy Property 2",
-      "description": "Step back in time and experience the allure of a bygone era with this enchanting vintage house nestled in the heart of Bagumbayan, Taguig City. A perfect blend of classic elegance and modern convenience",
-      "price": 5000000,
+      "title": "Prime Commercial Lot for Development",
+      "description": "Unlock the potential of this strategically located commercial lot in Quezon City. With its vast space and excellent accessibility, this property presents a lucrative opportunity for investors and developers seeking to establish a thriving business.",
+      "price": 12000000,
       "overview": [
         {
-          "bedroom": 2,
-          "bathroom": 3,
+          "bedroom": 3,
+          "bathroom": 2,
           "yearBuilt": 2024,
-          "area": 7104
+          "area": 5000
         }
       ],
       "isFeatured": true,
       "status": "For Sale",
       "type": "Commercial lot",
-      "location": "Hagonoy Bulacan",
+      "address": [
+        {
+          "street": "456 Main Street",
+          "city": "Quezon City"
+        }
+      ],
       "features": {
-        "interior": [
-          "Bedroom/s: 2",
-          "Bathroom/s: 1",
-          "Kitchen: 2",
-          "Balcony: 1"
-        ],
-        "exterior": [
-          "Garage: 1",
-          "Garden: 1",
-          "Swimming pool: 1",
-          "Storage Room: 1"
-        ],
-        "appliances": ["Air conditioning", "Refrigerators"],
+        "interior": ["Office space: 1", "Restroom/s: 2"],
+        "exterior": ["Parking space: 10", "Street Frontage: 20 meters"],
+        "appliances": ["None"],
         "utilities": [
-          "High-speed internet available",
-          "Separate Meters",
-          "Sewer Available"
+          "Electricity Available",
+          "Water Connection",
+          "Telephone Lines",
+          "Internet Access"
         ],
-        "distances": ["School: 100km", "Cafe: 200 km"]
+        "distances": ["Mall: 500 meters", "Airport: 10 km"]
       },
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15423.972327428637!2d120.92426928014717!3d14.88166526925762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ab6d7e85247b%3A0x7cb9f543883de30a!2sMasagana%20Elementary%20School!5e0!3m2!1sen!2sph!4v1713403801652!5m2!1sen!2sph",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.984531485528!2d121.03046570000002!3d14.656819300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7c7722bc6f1%3A0xdc87cf9ed19d652e!2sSM%20City%20North%20EDSA!5e0!3m2!1sen!2sph!4v1713451590233!5m2!1sen!2sph",
       "agent": [
         {
-          "profile": "/propertyImg/propImg_1.png",
-          "name": "Alyssa Joy Del Rosario",
-          "email": "alyssajoy@gmail.com",
-          "number": "0955 123 7738"
+          "profile": "/profileImg/profile_2.png",
+          "name": "Maria Santos",
+          "email": "mariasantos@gmail.com",
+          "number": "0920 987 6543"
+        }
+      ]
+    },
+
+    {
+      "id": 3,
+      "propertyImg": "/propertyImg/propImg_3.png",
+      "title": "Cozy Apartment in the Heart of Quezon City",
+      "description": "Experience urban living at its finest in this charming apartment conveniently located near major establishments and transportation hubs. Ideal for young professionals or starting families, this cozy unit offers comfort, convenience, and affordability.",
+      "price": 30000,
+      "overview": [
+        {
+          "bedroom": 2,
+          "bathroom": 2,
+          "yearBuilt": 2018,
+          "area": 8000
+        }
+      ],
+      "isFeatured": true,
+      "status": "For Rent",
+      "type": "Apartment",
+      "address": [
+        {
+          "street": "789 Oak Street",
+          "city": "Quezon City"
+        }
+      ],
+      "features": {
+        "interior": ["Bedroom/s: 2", "Bathroom/s: 1", "Living room: 1"],
+        "exterior": ["Parking: Street Parking"],
+        "appliances": ["Refrigerator", "Gas Stove"],
+        "utilities": [
+          "Electricity Included",
+          "Water Included",
+          "Internet Connection Available"
+        ],
+        "distances": ["Mall: 200 meters", "Hospital: 1 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30879.264319756763!2d121.01820900000001!3d14.6611599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b62d3f7f8b4d%3A0xd6f5efb9c496097b!2sHouse%20and%20lot%20for%20sale%20in%20Quezon%20City!5e0!3m2!1sen!2sph!4v1713451713605!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_3.png",
+          "name": "Carlos Garcia",
+          "email": "carlosgarcia@gmail.com",
+          "number": "0915 876 5432"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "propertyImg": "/propertyImg/propImg_4.png",
+      "title": "Spacious Family Home in Alabang",
+      "description": "Indulge in luxurious living with this exquisite family home located in the prestigious neighborhood of Alabang. Featuring expansive living areas, lush gardens, and top-notch amenities, this property offers the ultimate retreat for discerning homeowners.",
+      "price": 11000000,
+      "overview": [
+        {
+          "bedroom": 6,
+          "bathroom": 5,
+          "yearBuilt": 2010,
+          "area": 7000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "House and lot",
+      "address": [
+        {
+          "street": "321 Magnolia Drive",
+          "city": "Lipa City"
+        }
+      ],
+      "features": {
+        "interior": ["Bedroom/s: 6", "Bathroom/s: 5", "Family room: 1"],
+        "exterior": [
+          "Carport: 3",
+          "Landscaped Garden: 1",
+          "Outdoor Jacuzzi: 1"
+        ],
+        "appliances": [
+          "Centralized Air Conditioning",
+          "Smart Home System",
+          "Home Theater"
+        ],
+        "utilities": [
+          "Solar Power",
+          "Water Filtration System",
+          "Fiber Optic Internet",
+          "Centralized Gas Line"
+        ],
+        "distances": ["School: 1 km", "Shopping Center: 500 meters"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30977.6723861571!2d121.14464849999999!3d13.9461549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd6da1092c5611%3A0x3b4020a6d03005ea!2sHouse%20And%20Lot%20at%20Lipa%20Batangas!5e0!3m2!1sen!2sph!4v1713451789245!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_4.png",
+          "name": "Sophia Rodriguez",
+          "email": "sophiarodriguez@gmail.com",
+          "number": "0922 765 4321"
+        }
+      ]
+    },
+
+    {
+      "id": 5,
+      "propertyImg": "/propertyImg/propImg_5.png",
+      "title": "Prime Commercial Property in Ortigas",
+      "description": "Elevate your business with this prime commercial lot strategically located in the bustling district of Ortigas. Offering high visibility, excellent foot traffic, and unparalleled accessibility, this property is ideal for retail shops, restaurants, or office spaces.",
+      "price": 25000000,
+      "overview": [
+        {
+          "bedroom": 1,
+          "bathroom": 2,
+          "yearBuilt": 2014,
+          "area": 5000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "Commercial lot",
+      "address": [
+        {
+          "street": "789 Emerald Street Hagonoy",
+          "city": "Bulacan"
+        }
+      ],
+      "features": {
+        "interior": ["Office space: 1", "Restroom/s: 3", "Storage room: 1"],
+        "exterior": ["Parking space: 20", "Frontage: 30 meters"],
+        "appliances": ["None"],
+        "utilities": [
+          "Electricity Available",
+          "Water Connection",
+          "Internet Access",
+          "Telephone Lines"
+        ],
+        "distances": ["Mall: 200 meters", "Airport: 15 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991370.7958853971!2d121.13238703955078!3d13.926291999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397af3462da9725%3A0xa8db3ca893fea436!2sHouse%20and%20Lot%20For%20Sale!5e0!3m2!1sen!2sph!4v1713451901189!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_5.png",
+          "name": "Michael Tan",
+          "email": "michaeltan@gmail.com",
+          "number": "0918 654 3210"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "propertyImg": "/propertyImg/propImg_6.png",
+      "title": "Luxurious Mansion in Forbes Park",
+      "description": "Experience unparalleled luxury living in this majestic mansion nestled within the exclusive enclave of Forbes Park. Boasting opulent interiors, expansive landscaped gardens, and world-class amenities, this property sets a new standard for sophistication and elegance.",
+      "price": 50000000,
+      "overview": [
+        {
+          "bedroom": 10,
+          "bathroom": 8,
+          "yearBuilt": 2012,
+          "area": 15000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "House and lot",
+      "address": [
+        {
+          "street": "123 Acacia Avenue Sta Maria",
+          "city": "Bulacan"
+        }
+      ],
+      "features": {
+        "interior": [
+          "Bedroom/s: 10",
+          "Bathroom/s: 8",
+          "Library: 1",
+          "Home Theater: 1"
+        ],
+        "exterior": ["Carport: 6", "Landscaped Garden: 1", "Swimming Pool: 1"],
+        "appliances": [
+          "Centralized Air Conditioning",
+          "Smart Home System",
+          "Elevator"
+        ],
+        "utilities": [
+          "Solar Power",
+          "Backup Generator",
+          "Water Purification System",
+          "Fiber Optic Internet"
+        ],
+        "distances": ["International School: 2 km", "Golf Course: 1 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987185.0848977466!2d120.44184386562497!3d14.870553200000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397a98fb7fe2111%3A0xf4eabf0abeb080cd!2sHouse%20and%20lot%20for%20sale%2C%20Camella%20Sta.%20Maria%2C%20Bulacan!5e0!3m2!1sen!2sph!4v1713451948148!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_6.png",
+          "name": "Elena Gomez",
+          "email": "elenagomez@gmail.com",
+          "number": "0925 123 4567"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "propertyImg": "/propertyImg/propImg_7.png",
+      "title": "Strategic Commercial Property in BGC",
+      "description": "Seize the opportunity to establish your business in this prime commercial property located in the vibrant district of Bonifacio Global City. With its strategic location, high foot traffic, and modern infrastructure, this property is ideal for retail, dining, or office space.",
+      "price": 35000000,
+      "overview": [
+        {
+          "bedroom": 1,
+          "bathroom": 1,
+          "yearBuilt": 2014,
+          "area": 8000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "Commercial lot",
+      "address": [
+        {
+          "street": "Rodriguez Sr. Ave",
+          "city": "Quezon City"
+        }
+      ],
+      "features": {
+        "interior": ["Office space: 1", "Restroom/s: 4", "Conference room: 1"],
+        "exterior": ["Parking space: 15", "Street Frontage: 25 meters"],
+        "appliances": ["None"],
+        "utilities": [
+          "Electricity Available",
+          "Water Connection",
+          "Internet Access",
+          "Telephone Lines"
+        ],
+        "distances": ["Mall: 300 meters", "Airport: 8 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d494150.0393407226!2d120.7602388328125!3d14.6248523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7248ebd6cbf%3A0x5e99b41126c2813b!2sCommercial%20Lot%20for%20Lease!5e0!3m2!1sen!2sph!4v1713452000848!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_7.png",
+          "name": "Michelle Lim",
+          "email": "michellelim@gmail.com",
+          "number": "0917 876 5432"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "propertyImg": "/propertyImg/propImg_8.png",
+      "title": "Elegant Family Home in Ayala Alabang",
+      "description": "Immerse yourself in luxury and sophistication with this elegant family home located in the prestigious Ayala Alabang Village. Featuring timeless architecture, spacious interiors, and lush surroundings, this property offers a sanctuary of comfort and style.",
+      "price": 25000000,
+      "overview": [
+        {
+          "bedroom": 5,
+          "bathroom": 6,
+          "yearBuilt": 2016,
+          "area": 8000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "House and lot",
+      "address": [
+        {
+          "street": "Diversion Port Barangay",
+          "city": "Batangas"
+        }
+      ],
+      "features": {
+        "interior": ["Bedroom/s: 5", "Bathroom/s: 6", "Family room: 1"],
+        "exterior": ["Carport: 4", "Landscaped Garden: 1", "Swimming Pool: 1"],
+        "appliances": [
+          "Centralized Air Conditioning",
+          "Smart Home System",
+          "Home Theater"
+        ],
+        "utilities": [
+          "Solar Power",
+          "Backup Generator",
+          "Water Purification System",
+          "Fiber Optic Internet"
+        ],
+        "distances": ["School: 2 km", "Shopping Center: 1 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495962.4276411598!2d120.78871453281249!3d13.796560500000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd0fcb97b23377%3A0x7ef0a837cc5dc099!2sBatangas%20House%20and%20Lot!5e0!3m2!1sen!2sph!4v1713452068660!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_8.png",
+          "name": "Robert Tan",
+          "email": "roberttan@gmail.com",
+          "number": "0923 456 7890"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "propertyImg": "/propertyImg/propImg_9.png",
+      "title": "Prime Commercial Lot in Makati CBD",
+      "description": "Capitalise on this rare opportunity to own a prime commercial lot situated in the bustling Central Business District of Makati. With its strategic location, high-rise potential, and proximity to major business hubs, this property is an ideal investment for commercial development.",
+      "price": 45000000,
+      "overview": [
+        {
+          "bedroom": 1,
+          "bathroom": 1,
+          "yearBuilt": 2023,
+          "area": 3000
+        }
+      ],
+      "isFeatured": false,
+      "status": "For Sale",
+      "type": "Condo",
+      "address": [
+        {
+          "street": "123 Masagana Pandi",
+          "city": "Bulacan"
+        }
+      ],
+      "features": {
+        "interior": ["Office space: 1", "Restroom/s: 5", "Conference room: 1"],
+        "exterior": ["Parking space: 25", "Street Frontage: 35 meters"],
+        "appliances": ["None"],
+        "utilities": [
+          "Electricity Available",
+          "Water Connection",
+          "Internet Access",
+          "Telephone Lines"
+        ],
+        "distances": ["Shopping Mall: 300 meters", "Airport: 7 km"]
+      },
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61689.57988988708!2d120.92867317910155!3d14.90369910000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ab000631f705%3A0x9f95387243e3f263!2sMarga%20House%20Pandi!5e0!3m2!1sen!2sph!4v1713452133749!5m2!1sen!2sph",
+      "agent": [
+        {
+          "profile": "/profileImg/profile_9.png",
+          "name": "David Lim",
+          "email": "davidlim@gmail.com",
+          "number": "0916 987 6543"
         }
       ]
     }

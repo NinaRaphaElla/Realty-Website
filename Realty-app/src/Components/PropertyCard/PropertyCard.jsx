@@ -6,33 +6,17 @@ import TextButton from "../Buttons/TextButton";
 const PropertyCard = ({ properties }) => {
   const history = useHistory();
 
-  // const [properties, setProperties] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/property")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       setProperties(data); //taking the array and updating the property states
-  //     });
-  // }, []);
-
-  // const featuredProperties = properties.filter(
-  //   (property) => property.isFeatured === true
-  // );
-
   return (
     <>
       {properties &&
         properties.map((list) => (
           <div
-            className="bg-white flex flex-col max-w-80 h-[450px] hover:-translate-y-2 transition-all ease-in-out duration-200"
+            className="bg-white flex flex-col max-w-80 hover:-translate-y-2 transition-all ease-in-out duration-200 shadow-xl"
             key={list.id}
           >
             <div className="relative">
               <img
-                className="max-w-full relative"
+                className="w-full h-65 relative"
                 alt="Property image"
                 src={list.propertyImg}
               />
@@ -42,8 +26,14 @@ const PropertyCard = ({ properties }) => {
             </div>
 
             <div className="text-black p-4 overflow-hidden">
-              <h1 className="mb-2 text-xl h-[25%]">{list.title}</h1>
-              <p className="mb-2 text-gray text-xs font-sans line-clamp-2">
+              <h1 className="mb-1 text-xl">{list.title}</h1>
+              {list.address.map((location) => (
+                <p className="mb-3 text-black text-sm font-sans">
+                  {`${location.street}, ${location.city}`}
+                </p>
+              ))}
+
+              <p className="mb-3 text-gray text-xs font-sans line-clamp-2">
                 {list.description}
               </p>
               <p className="m-0 mb-2 text-xl font-sans font-semibold">

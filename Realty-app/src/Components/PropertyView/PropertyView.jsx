@@ -6,10 +6,10 @@ import { FaFacebookF, FaLink } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiAddLine, RiShareFill } from "react-icons/ri";
 
-import SliderImg from "../PropertyDetails/Slider.jsx";
 import Footer from "../Footer/Footer.jsx";
 import CTAButton from "../Buttons/CTAButton.jsx";
 import PropertyCard from "../PropertyCard/PropertyCard.jsx";
+import Slider from "./Slider.jsx";
 
 const PropertyView = () => {
   //fetching JSON
@@ -65,7 +65,7 @@ const PropertyView = () => {
   return (
     <>
       {/* background images */}
-      <SliderImg />
+      <Slider />
 
       <div className="flex justify-between flex-wrap md:mx-16 mx-4 transition-all ease-in-out duration-300">
         {/* House Details */}
@@ -139,7 +139,11 @@ const PropertyView = () => {
             <h1 className="font-semibold text-2xl lg:text-3xl">
               {propertyData.title}
             </h1>
-            <p className="text-base lg:text-base">{propertyData.location}</p>
+            <p className="text-lg">
+              {`${propertyData.address && propertyData.address[0].street}, ${
+                propertyData.address && propertyData.address[0].city
+              }`}
+            </p>
           </div>
 
           <div>

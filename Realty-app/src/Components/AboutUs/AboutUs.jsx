@@ -174,7 +174,7 @@ const AboutUs = () => {
 
           <div className="space-y-2 md:w-[50%]">
             <h1 className="flex md:text-3xl text-primary font-medium">
-              <span>
+              <span className="mr-4 text-3xl">
                 <MdHandshake />
               </span>
               Hassle-free Transactions
@@ -191,7 +191,7 @@ const AboutUs = () => {
           {/* Services 1 */}
           <div className="space-y-2 md:w-[50%]">
             <h1 className="flex md:text-3xl text-primary font-medium">
-              <span>
+              <span className="mr-4 text-3xl">
                 <MdPayments />
               </span>
               Secure Payment
@@ -205,7 +205,7 @@ const AboutUs = () => {
 
           <div className="space-y-2 md:w-[50%]">
             <h1 className="flex md:text-3xl text-primary font-medium">
-              <span>
+              <span className="mr-4 text-3xl">
                 <MdGroups2 />
               </span>
               Extensive Network
