@@ -1,8 +1,8 @@
 import CTAButton from "../Buttons/CTAButton";
-import singleLogo from "./bago.png";
+import singleLogo from "./1568Logo.png";
 import facebookSvg from "./facebook.svg";
 import instagramSvg from "./instagram.svg";
-import text from "./textlogo.png";
+import text from "./LogoText.png";
 import twitterSvg from "./twitter.svg";
 
 const Footer = () => {
@@ -18,9 +18,9 @@ const Footer = () => {
     <>
       <div className="mx-4 md:mx-16 mb-2 mt-24">
         {/* logo */}
-        <div className="mb-8">
-          <img className="h-20" src={singleLogo} />
-          <img className="mt-4 h-12" src={text} />
+        <div className="mb-8 transition-all ease-in-out duration-300">
+          <img className="lg:h-20 h-16" src={singleLogo} />
+          <img className="mt-3 lg:h-12 h-9" src={text} />
         </div>
 
         <div className="lg:flex mb-12">
