@@ -58,12 +58,13 @@ const Home = () => {
           <div className="mx-4 md:mx-8 lg:mx-16 md:flex md:items-center space-y-4 md:space-x-6">
             <div className="-space-y-3 md:-space-y-0">
               <h1 className="text-2xl lg:text-3xl">Welcome to</h1>
-              <h1 className="text-[3.4rem] md:text-6xl lg:text-[5rem] xl:text-[7rem] font-normal font-noto">
+              <h1 className="text-[3.4rem] md:text-6xl lg:text-[5.5rem] xl:text-[7rem] font-normal font-noto">
                 1568&#160;
                 <span className="text-primary font-playFair">Realty</span>
               </h1>
-              <h1 className="whitespace-nowrap text-2xl lg:text-4xl">
-                <span className="font-noto">&</span> Development Corporation
+              <h1 className="whitespace-nowrap text-2xl lg:text-4xl text-primary">
+                <span className="font-noto text-black">&</span> Development
+                Corporation
               </h1>
             </div>
             <div className="flex-1">
@@ -83,19 +84,19 @@ const Home = () => {
               </div>
               <div className="flex justify-between text-center md:text-left lg:px-8">
                 <p>
-                  <Counter end={150} start={0}/>
+                  <Counter end={150} start={0} />
                   <span className="text-sm md:text-sm text-black">
                     Happy Customers
                   </span>
                 </p>
                 <p>
-                  <CounterPlus end={200} start={0}/>
+                  <CounterPlus end={200} start={0} />
                   <span className="text-sm md:text-sm text-black">
                     Daily Inquiries
                   </span>
                 </p>
                 <p>
-                  <CounterPlus end={100} start={0}/>
+                  <CounterPlus end={100} start={0} />
                   <span className="text-sm md:text-sm text-black">
                     Listed Properties
                   </span>
@@ -105,7 +106,7 @@ const Home = () => {
 
             <div className="md:w-[50%] space-y-4">
               <div className="lg:space-y-0">
-                <h1 className="whitespace-nowrap text-2xl lg:text-4xl">
+                <h1 className="whitespace-nowrap text-2xl lg:text-3xl">
                   Helping you with your
                 </h1>
                 <h1 className=" text-4xl md:text-4xl lg:text-6xl xl:text-[5rem] text-primary whitespace-nowrap">
