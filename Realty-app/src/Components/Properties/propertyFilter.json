@@ -1,13 +1,13 @@
 {
   "status": [
-    { "value": "1", "label": "Any status" },
+    { "value": "1", "label": "Any Status" },
     { "value": "2", "label": "For Sale" },
     { "value": "3", "label": "For Rent" },
     { "value": "4", "label": "Sold" }
   ],
 
   "types": [
-    { "value": "1", "label": "All types" },
+    { "value": "1", "label": "All Types" },
     { "value": "2", "label": "Apartment" },
     { "value": "3", "label": "House and lot" },
     { "value": "4", "label": "Commercial lot" },
@@ -28,22 +28,8 @@
     { "value": "9", "label": "Laguna" },
     { "value": "10", "label": "Lipa City" },
     { "value": "11", "label": "Makati City" },
-    { "value": "12", "label": "Metro Manila" }
-  ],
-
-  "price": [
-    { "value": "1", "label": "All Main Location" },
-    { "value": "2", "label": "Albay" },
-    { "value": "3", "label": "Antipolo City" },
-    { "value": "4", "label": "Bataan" },
-    { "value": "5", "label": "Batangas" },
-    { "value": "6", "label": "Bulacan" },
-    { "value": "7", "label": "Caloocan City" },
-    { "value": "8", "label": "Cavite City" },
-    { "value": "9", "label": "Laguna" },
-    { "value": "10", "label": "Lipa City" },
-    { "value": "11", "label": "Makati City" },
-    { "value": "12", "label": "Hagonoy" }
+    { "value": "12", "label": "Metro Manila" },
+    { "value": "13", "label": "Quezon City" }
   ],
 
   "price_range": [

@@ -67,32 +67,33 @@ const Properties = () => {
   };
 
   const filteredProperties = properties.filter((property) => {
-    let Filter = true;
+    let matchesFilter = true;
 
-    if (selectedStatus) {
-      Filter = Filter && property.status === selectedStatus?.label;
+
+    if (selectedStatus && selectedStatus.label !== "Any Status") {
+      matchesFilter = matchesFilter && property.status === selectedStatus.label;
     }
+  
+    if (selectedType && selectedType.label !== "All Types") {
+      matchesFilter = matchesFilter && property.type === selectedType.label;
+  }
+   
+    if (selectedLocation && selectedLocation.label !== "All Main Location") {
+      matchesFilter = matchesFilter && property.address.some((addr) => addr.city === selectedLocation.label);
+  }
+   
+    if (selectedPrice && selectedPrice.label !== "Any Price") {
+      matchesFilter = matchesFilter && property.price >= selectedPrice.minPrice;
+      if (selectedPrice.maxPrice !== null) {
+        matchesFilter = matchesFilter && property.price <= selectedPrice.maxPrice;
+      }
+  }
+   
+    return matchesFilter;
+   });
+   
 
-    if (selectedType) {
-      Filter = Filter && property.type === selectedType?.label;
-    }
-
-    if (selectedLocation) {
-      Filter =
-        Filter &&
-        property.address.some((addr) => addr.city === selectedLocation.label);
-    }
-
-    if (selectedPrice) {
-      Filter =
-        Filter &&
-        property.price >= selectedPrice.min &&
-        property.price <= selectedPrice.max;
-    }
-
-    return Filter;
-  });
-
+   
   // const filteredProperties = selectedOption
   //   ? properties.filter((property) => property.status === selectedOption.label)
   //   : properties;
