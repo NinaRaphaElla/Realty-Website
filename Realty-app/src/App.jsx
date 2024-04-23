@@ -8,7 +8,7 @@ import Home from "./Components/Home/Home.jsx";
 import Properties from "./Components/Properties/Properties.jsx";
 import PropertyView from "./Components/PropertyView/PropertyView.jsx";
 import ScrollToTop from "./Components/ScrollToTop.jsx";
-import CountUp from "./Components/SplashScreen/CountUp.jsx";
+import SplashScreen from "./Components/SplashScreen/SplashScreen.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -17,21 +17,14 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 5500);
   }, []);
 
   return (
     <>
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <CountUp end={100} start={0} />
-          {/* <PulseLoader
-            color={"#14593F"}
-            loading={loading}
-            size={30}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          /> */}
+          <SplashScreen/>
         </div>
       ) : (
         <Router>
