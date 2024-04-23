@@ -66,34 +66,33 @@ const Properties = () => {
     setSelectedPrice(selectedOption);
   };
 
-  const filteredProperties = properties.filter((property) => {
-    let matchesFilter = true;
 
+  const filteredProperties = properties.filter((property) => {
+  let matchesFilter = true;
 
     if (selectedStatus && selectedStatus.label !== "Any Status") {
-      matchesFilter = matchesFilter && property.status === selectedStatus.label;
+       matchesFilter = matchesFilter && property.status === selectedStatus.label;
     }
-  
-    if (selectedType && selectedType.label !== "All Types") {
-      matchesFilter = matchesFilter && property.type === selectedType.label;
-  }
    
-    if (selectedLocation && selectedLocation.label !== "All Main Location") {
-      matchesFilter = matchesFilter && property.address.some((addr) => addr.city === selectedLocation.label);
-  }
+    if (selectedType && selectedType.label !== "All Types") {
+       matchesFilter = matchesFilter && property.type === selectedType.label;
+    }
+   
+    if (selectedLocation && selectedLocation.label !== "Any Location") {
+       matchesFilter = matchesFilter && property.address.some(address => address.city === selectedLocation.label);
+    }
    
     if (selectedPrice && selectedPrice.label !== "Any Price") {
-      matchesFilter = matchesFilter && property.price >= selectedPrice.minPrice;
-      if (selectedPrice.maxPrice !== null) {
-        matchesFilter = matchesFilter && property.price <= selectedPrice.maxPrice;
-      }
-  }
-   
+      const selectedMinPrice = selectedPrice.minPrice;
+      const selectedMaxPrice = selectedPrice.maxPrice;
+      const propertyPriceNumber = parseInt(property.price.replace(/,/g, ''), 10);
+      matchesFilter = matchesFilter && propertyPriceNumber >= selectedMinPrice && (selectedMaxPrice ? propertyPriceNumber <= selectedMaxPrice : true);
+    }
+
     return matchesFilter;
    });
-   
 
-   
+
   // const filteredProperties = selectedOption
   //   ? properties.filter((property) => property.status === selectedOption.label)
   //   : properties;
