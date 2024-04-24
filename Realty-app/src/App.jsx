@@ -14,7 +14,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true);  
     setTimeout(() => {
       setLoading(false);
     }, 5500);
@@ -43,7 +43,7 @@ const App = () => {
             <Route path="/property-details/:id">
               <PropertyView />
             </Route>
-            <Route exact path="/faqs"></Route>
+            <Route exact path="/faq"></Route>
             <Route exact path="/contact">
               <div className="mt-20">
                 <ContactUs />

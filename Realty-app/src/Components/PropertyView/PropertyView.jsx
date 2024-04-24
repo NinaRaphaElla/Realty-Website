@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+
 import { BiLogoMessenger } from "react-icons/bi";
 import { FaFacebookF, FaLink } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiAddLine, RiShareFill } from "react-icons/ri";
+import { HiArrowLongRight } from "react-icons/hi2";
 
 import Footer from "../Footer/Footer.jsx";
 import CTAButton from "../Buttons/CTAButton.jsx";
@@ -29,6 +31,13 @@ const PropertyView = () => {
 
   //Share modal
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [copyModal, setCopyModal] = useState(false);
+  const [isOverlayVisible, setIsOverlayVisible] = useState(false);
+
+  const closeModal = () => {
+    setCopyModal(false);
+    setIsOverlayVisible(false);
+ };
 
   const setModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -61,6 +70,17 @@ const PropertyView = () => {
   const handleViewListings = () => {
     history.push("/properties");
   };
+
+  const handleShare = async () => {
+    try {
+       const url = window.location.href;
+       await navigator.clipboard.writeText(url);
+       setCopyModal(true);
+       setIsOverlayVisible(true);
+    } catch (err) {
+       console.error('Failed to copy text: ', err);
+    }
+   };
 
   return (
     <>
@@ -97,35 +117,47 @@ const PropertyView = () => {
               </button>
 
               <div
-                className={`z-30 absolute w-56 h-56 bg-rawWhite shadow-xxl -bottom-66 right-0  transition-all ease-in-out duration-300 ${
+                className={`z-10 absolute w-56 h-56 bg-rawWhite shadow-xxl -bottom-66 right-0  transition-all ease-in-out duration-300 ${
                   !isModalOpen ? "hidden" : ""
                 }`}
               >
                 <p className="mx-5 mt-5 text-sm">Share this listing</p>
 
                 <div>
-                  <button className="flex ml-5 mt-3 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
-                    <FaFacebookF className="mr-2 m-2.5 size-4" />
-                    <p className="text-sm">Facebook</p>
-                  </button>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex ml-5 mt-3 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
+                      <FaFacebookF className="mr-2 m-2.5 size-4" />
+                      <p className="text-sm">Facebook</p>
+                  </a>
                 </div>
 
                 <div>
-                  <button className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
-                    <BiLogoMessenger className="mr-1.5 m-2 size-5" />
-                    <p className="text-sm">Messenger</p>
-                  </button>
+                  <a
+                    href={`fb-messenger://share/?link=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
+                      <BiLogoMessenger className="mr-1.5 m-2 size-5" />
+                      <p className="text-sm">Messenger</p>
+                  </a>
                 </div>
 
                 <div>
-                  <button className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
-                    <MdEmail className="mr-1.5 m-2 size-5" />
-                    <p className="text-sm">Email</p>
-                  </button>
+                  <a
+                    href={`mailto:?subject=Check%20out%20this%20amazing%20property!&body=${encodeURIComponent(window.location.href)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
+                      <MdEmail className="mr-1.5 m-2 size-5" />
+                      <p className="text-sm">Email</p>
+                  </a>
                 </div>
 
                 <div>
-                  <button className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary">
+                  <button className="flex ml-5 mt-2 items-center w-5/6 h-8 border-2 rounded-sm hover:bg-hover-faqs hover:border-primary hover:text-primary" onClick={handleShare}>
                     <FaLink className="mr-2 m-2.5 size-4 rotate-90" />
                     <p className="text-sm">Copy link</p>
                   </button>
@@ -346,7 +378,7 @@ const PropertyView = () => {
         </div>
 
         {/* Sticky Forms */}
-        <div className="sticky top-24 mt-16 lg:mt-0 p-6 h-[32rem] w-full lg:w-[35%] bg-rawWhite shadow-xxl transition-all ease-in-out duration-300">
+        <div className="sticky top-24 mt-16 lg:mt-0 p-6 h-full w-full lg:w-[35%] bg-rawWhite shadow-xxl transition-all ease-in-out duration-300">
           <h1 className="text-lg font-bold mb-1">Interested? Message Us</h1>
           <p className="text-sm text-black text-opacity-70 mb-2">
             Feel free to reach out to us and connect with one of our welcoming
@@ -378,16 +410,44 @@ const PropertyView = () => {
               />
             </div>
 
-            <div>
+            <div >
               <label className="text-sm text-black text-opacity-70">
                 Phone Number &#40;optional&#41;
               </label>
-              <input
-                className="bg-input w-[100%] text-gray p-2 focus:outline-none"
-                type="text"
-                name="user_number"
-                placeholder="Enter your phone number"
-              />
+              <div className="relative">
+                <input
+                  className="bg-input w-[100%] text-gray py-2  pl-14 pr-2 focus:outline-none"
+                  type="text"
+                  name="user_number"
+                  placeholder="xxx xxx xxxx"
+                />
+                <div className="absolute bg-custom-gray h-10 w-12 top-0 flex items-center justify-center font-semibold">
+                +63
+                </div>
+              </div>
+
+            </div>
+
+            <div>
+              <label className="text-sm text-black text-opacity-70">
+              Make an Offer? Enter your desired offer price &#40;optional&#41;
+              </label>
+              <div className="relative">
+                <input
+                  className="bg-input w-[100%] text-gray p-2 pl-12 focus:outline-none relative "
+                  type="text"
+                  name="user_offer"
+                  placeholder="00.00"
+                />
+                <div className="absolute bg-custom-gray h-10 w-10 top-0 flex items-center justify-center font-semibold">
+                ₱
+                </div>
+
+ 
+              </div>
+
+             
+
             </div>
 
             <div>
@@ -404,15 +464,17 @@ const PropertyView = () => {
             </div>
 
             <div>
-              <input
+             {/*  <input
                 className="cursor-pointer mt-2 mb-2 font-playFair border-2 border-white text-white p-2 bg-accent w-[100%] hover:bg-white hover:text-accent hover:border-accent ease-out duration-200"
                 type="submit"
                 value="Send Message"
-              />
+              />*/}
+              <CTAButton btnName={"Send Message"}  />
             </div>
           </div>
         </div>
       </div>
+
       {/* similar listings */}
       <div className="mt-24">
         <div className="flex items-center">
@@ -435,6 +497,23 @@ const PropertyView = () => {
           />
         </div>
       </div>
+
+      {isOverlayVisible && (<div className="fixed inset-0 bg-black bg-opacity-30 z-50"></div>)}
+      {copyModal && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-90 transition-all ease-in-out duration-300 bg-rawWhite z-50 rounded-lg shadow-lg ">
+          <div className="flex flex-col items-center justify-center p-4">
+            <div className="h-20 w-20">
+              <video autoPlay muted playsInline src="/check_mark.mp4" />
+            </div>
+            <p className="font-bold text-xl text-center pt-2">Copied to clipboard!</p>
+            <p className="font-normal text-center text-xs text-gray-200 pb-2">URL has been copied and can be shared</p>
+            <button onClick={closeModal} className="cursor-pointer mt-2 mb-2 font-playFair border-2 border-white text-white p-1 bg-accent w-[45%] hover:bg-white hover:text-accent hover:border-accent ease-out duration-200">
+              Exit
+            </button>
+          </div>
+        </div>
+      )}
+
 
       <Footer />
     </>

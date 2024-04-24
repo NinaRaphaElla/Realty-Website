@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        'custom-gray': '#CCD5D2',
         primary: "#14593F",
         secondary: {
           100: "#668378",
@@ -34,6 +35,26 @@ export default {
         xl: ["0 2px 15px rgba(0, 0, 0, 0.10)"],
         xxl: ["0 4px 16px rgba(0, 0, 0, 0.10)"],
       },
+
+      spacing: {
+        '13': '3.25rem',
+        '15': '3.75rem',
+        '128': '32rem',
+        '144': '36rem',
+        '30': '30px',
+      },
+      inset: {
+        '30': '30px',
+      },
+      width: {
+        '200.17': '200.17px',
+        '310': '310px',
+      },
+      
+    height: {
+      '35': '35px',
+      '310': '310px',
+    },
     },
   },
   plugins: [],
